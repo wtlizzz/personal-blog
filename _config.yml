@@ -104,3 +104,9 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
+
+## hexo-admin authentification
+#admin:
+#  username: wtlizzz
+#  password_hash: $2a$10$KO4GyTQER0ptYmDNJOjqSem4MLWBa8wmhev6bMUfRo1qrn8jff2s2
+#  secret: my super secret phrase
