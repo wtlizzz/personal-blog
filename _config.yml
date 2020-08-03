@@ -8,12 +8,12 @@ subtitle: ''  #网站副标题
 description: ''   #网站描述
 keywords:   #网站关键词
 author: John Doe    #您的名字
-language: en    #语言
+language: zh-Hans    #语言
 timezone: ''      #时区
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.wtlizzz.com/    #网址
+url: https://wtlizzz.gitee.io    #网址
 root: /     #网站根目录
 permalink: :year/:month/:day/:title/    #文章的 永久链接 格式 defaults: :year/:month/:day/:title/
 permalink_defaults:   #永久链接中各部分的默认值
