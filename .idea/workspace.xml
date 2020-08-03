@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c811fafb-6bb0-4d09-a101-df37246b6688" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/landscape/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/themes/landscape/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,11 +15,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/themes/landscape/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="262">
+                <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="266">
+              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -39,6 +60,7 @@
         <option value="$PROJECT_DIR$/CNAME" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/themes/landscape/README.md" />
       </list>
     </option>
   </component>
@@ -70,63 +92,23 @@
             <path>
               <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="2020" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="2020" type="462c0819:PsiDirectoryNode" />
-              <item name="08" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="2020" type="462c0819:PsiDirectoryNode" />
-              <item name="08" type="462c0819:PsiDirectoryNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="2020" type="462c0819:PsiDirectoryNode" />
-              <item name="08" type="462c0819:PsiDirectoryNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-              <item name="hello-world" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="archives" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="archives" type="462c0819:PsiDirectoryNode" />
-              <item name="2020" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="archives" type="462c0819:PsiDirectoryNode" />
-              <item name="2020" type="462c0819:PsiDirectoryNode" />
-              <item name="08" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
               <item name="scaffolds" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="landscape" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -169,12 +151,12 @@
       <option name="presentableId" value="Default" />
       <updated>1596339393333</updated>
       <workItem from="1596339395544" duration="6412000" />
-      <workItem from="1596413819714" duration="919000" />
+      <workItem from="1596413819714" duration="1195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7331000" />
+    <option name="totallyTimeSpent" value="7607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -194,7 +176,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32356688" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32356688" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -291,13 +273,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="874">
@@ -352,8 +327,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="266">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/landscape/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="262">
+            <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
