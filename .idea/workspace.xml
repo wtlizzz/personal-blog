@@ -2,24 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c811fafb-6bb0-4d09-a101-df37246b6688" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/_posts/compile太慢.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2020/08/02/demo/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2020/08/02/hello-world/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Page1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/Page1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2020/08/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2020/08/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/2020/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/2020/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archives/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/demo1-pic1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/demo2-pic1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/demo2-pic2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Page1/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/demo.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/SpringBoot模拟gRPC通信.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/hello-world.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/gRPC.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/08/02/SpringBoot模拟gRPC通信/demo2-pic1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/08/02/SpringBoot模拟gRPC通信/demo2-pic2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/08/02/SpringBoot模拟gRPC通信/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/08/02/gRPC/demo1-pic1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/08/02/gRPC/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Page1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2020/08/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2020/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/algolia_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/apple-touch-icon-next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/avatar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by-nc-nd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by-nc-sa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by-nc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by-nd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by-sa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-zero.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon-16x16-next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon-32x32-next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/algolia-search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bookmark.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/local-search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/motion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/next-boot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/schemes/muse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/schemes/pisces.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/anime.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/font-awesome/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/font-awesome/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/font-awesome/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/font-awesome/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/velocity/velocity.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/velocity/velocity.ui.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/next/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/next/_config.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,12 +54,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-742">
+              <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="420" column="23" selection-start-line="420" selection-start-column="23" selection-end-line="420" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/_posts/gRPC.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="171">
-                <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <first_editor relative-caret-position="323">
+                <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -78,7 +117,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/themes/next" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -94,19 +133,19 @@
         <option value="$PROJECT_DIR$/source/_posts/demo.md" />
         <option value="$PROJECT_DIR$/source/_posts/hello-world.md" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/themes/next/_config.yml" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/source/Page1/index.md" />
         <option value="$PROJECT_DIR$/source/_posts/compile太慢.md" />
         <option value="$PROJECT_DIR$/source/_posts/SpringBoot模拟gRPC通信.md" />
         <option value="$PROJECT_DIR$/source/_posts/gRPC.md" />
+        <option value="$PROJECT_DIR$/themes/next/_config.yml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="307" />
+    <option name="x" value="545" />
     <option name="y" value="-1056" />
-    <option name="width" value="1353" />
+    <option name="width" value="1115" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -150,6 +189,27 @@
               <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
               <item name="themes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="next" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="next" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="next" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,18 +256,18 @@
       <option name="presentableId" value="Default" />
       <updated>1596339393333</updated>
       <workItem from="1596339395544" duration="6412000" />
-      <workItem from="1596413819714" duration="9306000" />
+      <workItem from="1596413819714" duration="10295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15718000" />
+    <option name="totallyTimeSpent" value="16707000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="307" y="-1056" width="1353" height="1057" extended-state="0" />
+    <frame x="545" y="-1056" width="1115" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21621622" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2632541" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -221,13 +281,13 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26321244" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26321244" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16814159" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2632541" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -377,24 +437,10 @@
     <entry file="file://$PROJECT_DIR$/source/images/demo1-pic1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2879">
-          <caret line="248" lean-forward="true" selection-start-line="248" selection-end-line="248" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -431,10 +477,27 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/gRPC.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="171">
-            <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <first_editor relative-caret-position="323">
+            <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-742">
+          <caret line="44" column="20" lean-forward="true" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/source/images/avatar.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="420" column="23" selection-start-line="420" selection-start-column="23" selection-end-line="420" selection-end-column="23" />
         </state>
       </provider>
     </entry>

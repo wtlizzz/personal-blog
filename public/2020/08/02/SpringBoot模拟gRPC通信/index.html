@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"wtlizzz.gitee.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="1、.proto文件编译在main目录下新建proto目录，创建hello.proto文件。文件内容如下： 123456789101112131415161718192021222324252627282930syntax &#x3D; &quot;proto3&quot;;&#x2F;&#x2F;指定proto版本package com.aaaa.monitor;&#x2F;&#x2F;指定pr">
+  <meta name="description" content="使用SpringBoot模拟gRPC通信，包括.proto文件编译、客户端实现、服务端实现、模拟双向流通信学习与实践。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot模拟gRPC通信">
 <meta property="og:url" content="https://wtlizzz.gitee.io/2020/08/02/SpringBoot%E6%A8%A1%E6%8B%9FgRPC%E9%80%9A%E4%BF%A1/index.html">
 <meta property="og:site_name" content="上善若水">
-<meta property="og:description" content="1、.proto文件编译在main目录下新建proto目录，创建hello.proto文件。文件内容如下： 123456789101112131415161718192021222324252627282930syntax &#x3D; &quot;proto3&quot;;&#x2F;&#x2F;指定proto版本package com.aaaa.monitor;&#x2F;&#x2F;指定pr">
+<meta property="og:description" content="使用SpringBoot模拟gRPC通信，包括.proto文件编译、客户端实现、服务端实现、模拟双向流通信学习与实践。">
 <meta property="og:locale">
-<meta property="og:image" content="https://wtlizzz.gitee.io/.io//demo2-pic1.png">
-<meta property="og:image" content="https://wtlizzz.gitee.io/.io//demo2-pic2.png">
-<meta property="article:published_time" content="2020-08-02T04:40:45.000Z">
-<meta property="article:modified_time" content="2020-08-03T06:32:02.856Z">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/03/aUIkzd.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/08/03/aUIEQA.png">
+<meta property="article:published_time" content="2020-08-02T12:40:45.000Z">
+<meta property="article:modified_time" content="2020-08-03T06:56:00.294Z">
 <meta property="article:author" content="Wtli">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wtlizzz.gitee.io/.io//demo2-pic1.png">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/08/03/aUIkzd.png">
 
 <link rel="canonical" href="https://wtlizzz.gitee.io/2020/08/02/SpringBoot%E6%A8%A1%E6%8B%9FgRPC%E9%80%9A%E4%BF%A1/">
 
@@ -177,15 +177,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-08-02 12:40:45" itemprop="dateCreated datePublished" datetime="2020-08-02T12:40:45+08:00">2020-08-02</time>
+              <time title="Created: 2020-08-02 20:40:45" itemprop="dateCreated datePublished" datetime="2020-08-02T20:40:45+08:00">2020-08-02</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-03 14:32:02" itemprop="dateModified" datetime="2020-08-03T14:32:02+08:00">2020-08-03</time>
-              </span>
 
           
 
@@ -198,13 +191,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="1、-proto文件编译"><a href="#1、-proto文件编译" class="headerlink" title="1、.proto文件编译"></a>1、.proto文件编译</h3><p>在main目录下新建proto目录，创建hello.proto文件。文件内容如下：</p>
+        <p>使用SpringBoot模拟gRPC通信，包括.proto文件编译、客户端实现、服务端实现、模拟双向流通信学习与实践。</p>
+<a id="more"></a>
+
+<h3 id="1、-proto文件编译"><a href="#1、-proto文件编译" class="headerlink" title="1、.proto文件编译"></a>1、.proto文件编译</h3><p>在main目录下新建proto目录，创建hello.proto文件。文件内容如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">syntax &#x3D; &quot;proto3&quot;;&#x2F;&#x2F;指定proto版本</span><br><span class="line"></span><br><span class="line">package com.aaaa.monitor;&#x2F;&#x2F;指定proto文件包名</span><br><span class="line"></span><br><span class="line">option java_package &#x3D;&quot;com.aaaa.monitor&quot;;&#x2F;&#x2F;指定 java 包名</span><br><span class="line"></span><br><span class="line">option java_outer_classname &#x3D;&quot;ServiceProto&quot;;&#x2F;&#x2F;指定proto文件生成java文件后的类名</span><br><span class="line"></span><br><span class="line">option java_multiple_files &#x3D;true;&#x2F;&#x2F;开启多文件</span><br><span class="line"></span><br><span class="line">message HelloRequest &#123;&#x2F;&#x2F;请求参数</span><br><span class="line"></span><br><span class="line">    string name &#x3D; 1;  &#x2F;&#x2F;1仅作为该message与其他数据区别的标示</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message HelloReply &#123;&#x2F;&#x2F;响应参数</span><br><span class="line"></span><br><span class="line">    string message &#x3D; 1; </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;定义rpc服务接口</span><br><span class="line"></span><br><span class="line">service Greeter&#123;&#x2F;&#x2F;服务端接口方法</span><br><span class="line"></span><br><span class="line">  rpc SayHello(com.aaaa.monitor.HelloRequest)returns (com.aaaa.monitor.HelloReply);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>
+
 <p>使用maven compile   编译之后会在target/generated-sources文件夹中增加protobuf文件夹。编译完之后目录如下：</p>
-<p><img src="/.io//demo2-pic1.png" alt="alt proto编译后文件目录
-"></p>
+<p><img src="https://s1.ax1x.com/2020/08/03/aUIkzd.png" alt="aUIkzd.png"></p>
 <p>生成了在proto文件中service参数对应的Grpc类，在类中自动创建了newstub、newBlockingStub、newFutureStub三个方法。分别对应的是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">newstub：Creates a new async stub that supports all call types for the service</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>翻译一下就是创建一个异步的stub，支持所有类型的service。</p>
@@ -222,10 +217,13 @@
 <p>在使用blockingStub时，这时候就用到了proto生成的另一个文件夹，在protobuf文件夹中生成的java文件夹，里面包含了在项目中.proto文件中定义的message数据，每一个message数据生成一个接口，一个实现类。</p>
 <p>在blockingStub中调用service定义的rpc方法，传递的参数为HelloRequest，在.proto文件中定义的message数据。然后接收到的参数为HelloReply，同样是在.proto文件中定义的message数据。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HelloRequest request &#x3D; HelloRequest.newBuilder().setName(name).build();</span><br><span class="line"></span><br><span class="line">HelloReply response;</span><br><span class="line"></span><br><span class="line">response &#x3D;blockingStub.sayHello(request);</span><br></pre></td></tr></table></figure>
+
+
 <h4 id="3、服务端实现"><a href="#3、服务端实现" class="headerlink" title="3、服务端实现"></a>3、服务端实现</h4><p>在服务端实现上，重要的部分就是自定义实现.proto文件中定义的service参数中rpc方法。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class GreeterImplextends GreeterGrpc.GreeterImplBase &#123;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line"></span><br><span class="line">    public void sayHello(HelloRequest req, StreamObserver responseObserver) &#123;</span><br><span class="line"></span><br><span class="line">HelloReply reply &#x3D; HelloReply.newBuilder().setMessage(&quot;Hello &quot; + req.getName()).build();</span><br><span class="line"></span><br><span class="line">        responseObserver.onNext(reply);</span><br><span class="line"></span><br><span class="line">        responseObserver.onCompleted();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>定义完方法后，定义端口号，打开服务就能够接收gRPC请求。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server &#x3D; ServerBuilder.forPort(port).addService((BindableService)new  GreeterImpl()).build().start();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h4 id="4、模拟双向流通信"><a href="#4、模拟双向流通信" class="headerlink" title="4、模拟双向流通信"></a>4、模拟双向流通信</h4><p>服务端与普通通信差别不大，直接附代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public void start()throws IOException &#123;</span><br><span class="line"></span><br><span class="line">        int port &#x3D;8081;</span><br><span class="line"></span><br><span class="line">        server &#x3D; ServerBuilder.forPort(port).addService(new StreamServiceImpl()).addService(new                         GreeterImpl()).build().start();</span><br><span class="line"></span><br><span class="line">        logger.info(&quot;Server started, listening on &quot; + port);</span><br><span class="line"></span><br><span class="line">        Runtime.getRuntime().addShutdownHook(new Thread() &#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line"></span><br><span class="line">            public void run() &#123;</span><br><span class="line"></span><br><span class="line">                    System.out.println(&quot;*** shutting down gRPC server since JVM is shutting down&quot;);</span><br><span class="line"></span><br><span class="line">                    try &#123;</span><br><span class="line"></span><br><span class="line">                    StreamServer.this.stop();</span><br><span class="line"></span><br><span class="line">                    &#125;catch (InterruptedException e) &#123;</span><br><span class="line"></span><br><span class="line">                        e.printStackTrace(System.err);</span><br><span class="line"></span><br><span class="line">                    &#125;    </span><br><span class="line"></span><br><span class="line">                        System.out.println(&quot;*** server shut down&quot;);</span><br><span class="line"></span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>服务端ServiceImpl实现部分，流传输通过接收response参数，返回request参数来实现的。</p>
@@ -236,7 +234,7 @@
 <p>在此用例中增加了，延时发送请求操作，Thread.sleep(3000);</p>
 <p>最后增加request.onCompleted();  &amp;&amp;   responseStreamObserver.onCompleted();完成操作。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">public void sendNetInfo(String info) &#123;</span><br><span class="line"></span><br><span class="line">        StreamObserver responseStreamObserver &#x3D;new StreamObserver() &#123;</span><br><span class="line"></span><br><span class="line">                private int cut &#x3D;0;</span><br><span class="line"></span><br><span class="line">                @Override</span><br><span class="line"></span><br><span class="line">                public void onNext(streamResponse streamResponse) &#123;</span><br><span class="line"></span><br><span class="line">                        logger.info(&quot;接收到第&quot; +cut++ +&quot;次streamResponse&quot;);</span><br><span class="line"></span><br><span class="line">                        logger.info(streamResponse.toString());    </span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                @Override</span><br><span class="line"></span><br><span class="line">                public void onError(Throwable throwable) &#123;</span><br><span class="line"></span><br><span class="line">                        logger.warning(&quot;onError：&quot; + throwable.getMessage());</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                @Override</span><br><span class="line"></span><br><span class="line">                public void onCompleted() &#123;</span><br><span class="line"></span><br><span class="line">                        logger.warning(&quot;onCompleted&quot;);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;发送流式请求</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line"></span><br><span class="line">                StreamObserver request &#x3D;ssStub.getNetInfo(responseStreamObserver);</span><br><span class="line"></span><br><span class="line">                for (int i &#x3D;0; i &lt;10; i++) &#123;</span><br><span class="line"></span><br><span class="line">                        streamRequest streamRequest &#x3D; com.aircas.monitor.streamRequest.newBuilder().</span><br><span class="line"></span><br><span class="line">                        setNetBodyInfo(&quot;I am body :&quot; + i).setNetHeadInfo(&quot;I am Head :&quot; + i).build();</span><br><span class="line"></span><br><span class="line">                        request.onNext(streamRequest);</span><br><span class="line"></span><br><span class="line">                        Thread.sleep(3000);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            request.onCompleted();</span><br><span class="line"></span><br><span class="line">            responseStreamObserver.onCompleted();</span><br><span class="line"></span><br><span class="line">        &#125;catch (StatusRuntimeException | InterruptedException e) &#123;</span><br><span class="line"></span><br><span class="line">                logger.log(Level.WARNING, &quot;RPC failed: &#123;0&#125;&quot;, e.getMessage());</span><br><span class="line"></span><br><span class="line">                return;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void main(String[] args)throws Exception &#123;</span><br><span class="line"></span><br><span class="line">        ManagedChannel channel &#x3D; ManagedChannelBuilder.forTarget(target).usePlaintext().build();</span><br><span class="line"></span><br><span class="line">        try &#123;    </span><br><span class="line"></span><br><span class="line">                StreamClient client &#x3D;new StreamClient(channel);</span><br><span class="line"></span><br><span class="line">                client.sendNetInfo(user);</span><br><span class="line"></span><br><span class="line">        &#125;finally &#123;</span><br><span class="line"></span><br><span class="line">                channel.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最后附上运行图<br><img src="/.io//demo2-pic2.png" alt="alt 运行图"></p>
+<p>最后附上运行图<br><img src="https://s1.ax1x.com/2020/08/03/aUIEQA.png" alt="aUIEQA.png"></p>
 
     </div>
 
@@ -251,10 +249,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/08/02/gRPC/" rel="next" title="gRPC 4种rpc定义方法与3种stub介绍">
-      gRPC 4种rpc定义方法与3种stub介绍 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/08/02/gRPC/" rel="prev" title="gRPC 4种rpc定义方法与3种stub介绍">
+      <i class="fa fa-chevron-left"></i> gRPC 4种rpc定义方法与3种stub介绍
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/03/compile%E5%A4%AA%E6%85%A2/" rel="next" title="IDEA maven compile太慢">
+      IDEA maven compile太慢 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -328,7 +329,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -362,8 +363,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Wtli</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
 
         
 

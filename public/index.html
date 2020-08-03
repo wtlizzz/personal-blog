@@ -148,7 +148,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://wtlizzz.gitee.io/2020/08/02/gRPC/">
+    <link itemprop="mainEntityOfPage" href="https://wtlizzz.gitee.io/2020/08/03/compile%E5%A4%AA%E6%85%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -162,7 +162,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/08/02/gRPC/" class="post-title-link" itemprop="url">gRPC 4种rpc定义方法与3种stub介绍</a>
+            <a href="/2020/08/03/compile%E5%A4%AA%E6%85%A2/" class="post-title-link" itemprop="url">IDEA maven compile太慢</a>
         </h2>
 
         <div class="post-meta">
@@ -172,15 +172,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-08-02 18:03:56" itemprop="dateCreated datePublished" datetime="2020-08-02T18:03:56+08:00">2020-08-02</time>
+              <time title="Created: 2020-08-03 12:51:01" itemprop="dateCreated datePublished" datetime="2020-08-03T12:51:01+08:00">2020-08-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-03 14:28:54" itemprop="dateModified" datetime="2020-08-03T14:28:54+08:00">2020-08-03</time>
-              </span>
 
           
 
@@ -193,16 +186,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="gRPC-What"><a href="#gRPC-What" class="headerlink" title="gRPC What"></a>gRPC What</h3><p>有关<a target="_blank" rel="noopener" href="https://www.grpc.io/docs/what-is-grpc/introduction/">gRPC官方介绍</a>：</p>
-<p><img src="/.io//demo1-pic1.png" alt="alt run and talk to each other in a variety of environments"></p>
-<p>gRPC是一个能在不同语言不同平台中进行高效通信的服务。gRPC默认使用Protocol Buffers数据格式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Protocol Buffers：Google成熟的用于序列化结构化数据的开源机制（类似于JSON并且能与JSON一起使用）</span><br></pre></td></tr></table></figure>
-
-<p>Protocol Buffers以.proto作为拓展名，是一系列以name-value键值对的形式存储的数据格式。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">message  Person&#123;</span><br><span class="line"></span><br><span class="line">    string  name=1;</span><br><span class="line"></span><br><span class="line">    int32  id=2;</span><br><span class="line"></span><br><span class="line">    bool  has_ponycopter=3;    </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p>添加Ali镜像解决，IDEA maven compile太慢</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/08/02/gRPC/#more" rel="contents">
+              <a class="btn" href="/2020/08/03/compile%E5%A4%AA%E6%85%A2/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -250,15 +237,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-08-02 12:40:45" itemprop="dateCreated datePublished" datetime="2020-08-02T12:40:45+08:00">2020-08-02</time>
+              <time title="Created: 2020-08-02 20:40:45" itemprop="dateCreated datePublished" datetime="2020-08-02T20:40:45+08:00">2020-08-02</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-03 14:32:02" itemprop="dateModified" datetime="2020-08-03T14:32:02+08:00">2020-08-03</time>
-              </span>
 
           
 
@@ -271,11 +251,75 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1、-proto文件编译"><a href="#1、-proto文件编译" class="headerlink" title="1、.proto文件编译"></a>1、.proto文件编译</h3><p>在main目录下新建proto目录，创建hello.proto文件。文件内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">syntax &#x3D; &quot;proto3&quot;;&#x2F;&#x2F;指定proto版本</span><br><span class="line"></span><br><span class="line">package com.aaaa.monitor;&#x2F;&#x2F;指定proto文件包名</span><br><span class="line"></span><br><span class="line">option java_package &#x3D;&quot;com.aaaa.monitor&quot;;&#x2F;&#x2F;指定 java 包名</span><br><span class="line"></span><br><span class="line">option java_outer_classname &#x3D;&quot;ServiceProto&quot;;&#x2F;&#x2F;指定proto文件生成java文件后的类名</span><br><span class="line"></span><br><span class="line">option java_multiple_files &#x3D;true;&#x2F;&#x2F;开启多文件</span><br><span class="line"></span><br><span class="line">message HelloRequest &#123;&#x2F;&#x2F;请求参数</span><br><span class="line"></span><br><span class="line">    string name &#x3D; 1;  &#x2F;&#x2F;1仅作为该message与其他数据区别的标示</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message HelloReply &#123;&#x2F;&#x2F;响应参数</span><br><span class="line"></span><br><span class="line">    string message &#x3D; 1; </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;定义rpc服务接口</span><br><span class="line"></span><br><span class="line">service Greeter&#123;&#x2F;&#x2F;服务端接口方法</span><br><span class="line"></span><br><span class="line">  rpc SayHello(com.aaaa.monitor.HelloRequest)returns (com.aaaa.monitor.HelloReply);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <p>使用SpringBoot模拟gRPC通信，包括.proto文件编译、客户端实现、服务端实现、模拟双向流通信学习与实践。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/08/02/SpringBoot%E6%A8%A1%E6%8B%9FgRPC%E9%80%9A%E4%BF%A1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://wtlizzz.gitee.io/2020/08/02/gRPC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wtli">
+      <meta itemprop="description" content="不卑不亢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="上善若水">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/02/gRPC/" class="post-title-link" itemprop="url">gRPC 4种rpc定义方法与3种stub介绍</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-02 18:03:56" itemprop="dateCreated datePublished" datetime="2020-08-02T18:03:56+08:00">2020-08-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>gRPC 4种rpc定义方法与3种stub介绍<br>接触gRPC通信，对gRPC进行深入的了解与学习。包括Proto文件的格式，与编译方法的使用。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/02/gRPC/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -361,7 +405,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -395,8 +439,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Wtli</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
 
         
 
