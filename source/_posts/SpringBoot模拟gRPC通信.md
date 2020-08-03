@@ -1,6 +1,11 @@
 title: SpringBoot模拟gRPC通信
 date: 2020-08-02 20:40:45
+categories:
+    - 集成
 tags:
+    - gRPC
+    - 模拟通信
+    - SpringBoot
 ---
 
 使用SpringBoot模拟gRPC通信，包括.proto文件编译、客户端实现、服务端实现、模拟双向流通信学习与实践。

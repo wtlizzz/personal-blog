@@ -1,5 +1,10 @@
 title: IDEA maven compile太慢
 date: 2020-08-03 12:51:01
+categories:
+    - 编译器
+tags:
+    - maven  
+    - IDEA
 ---
 
 添加Ali镜像解决，IDEA maven compile太慢

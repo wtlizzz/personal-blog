@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 上善若水   #网站标题
+title: 文韬   #网站标题
 subtitle: '始终如一'  #网站副标题
 description: '不卑不亢'   #网站描述
 keywords:   #网站关键词
 author: Wtli    #您的名字
-language: zh-Hans    #语言
+language: zh-CN    #语言
 timezone: ''      #时区
 
 # URL
