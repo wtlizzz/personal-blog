@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo   #网站标题
-subtitle: ''  #网站副标题
-description: ''   #网站描述
+title: 上善若水   #网站标题
+subtitle: '始终如一'  #网站副标题
+description: '不卑不亢'   #网站描述
 keywords:   #网站关键词
-author: John Doe    #您的名字
+author: Wtli    #您的名字
 language: zh-Hans    #语言
 timezone: ''      #时区
 

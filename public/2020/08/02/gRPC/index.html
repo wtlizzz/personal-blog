@@ -23,18 +23,18 @@
   <meta name="description" content="gRPC What有关gRPC官方介绍：  gRPC是一个能在不同语言不同平台中进行高效通信的服务。gRPC默认使用Protocol Buffers数据格式： 1Protocol Buffers：Google成熟的用于序列化结构化数据的开源机制（类似于JSON并且能与JSON一起使用）  Protocol Buffers以.proto作为拓展名，是一系列以name-value键值对的形式存储的数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gRPC 4种rpc定义方法与3种stub介绍">
-<meta property="og:url" content="https://wtlizzz.gitee.io/2020/08/02/hello-world/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="https://wtlizzz.gitee.io/2020/08/02/gRPC/index.html">
+<meta property="og:site_name" content="上善若水">
 <meta property="og:description" content="gRPC What有关gRPC官方介绍：  gRPC是一个能在不同语言不同平台中进行高效通信的服务。gRPC默认使用Protocol Buffers数据格式： 1Protocol Buffers：Google成熟的用于序列化结构化数据的开源机制（类似于JSON并且能与JSON一起使用）  Protocol Buffers以.proto作为拓展名，是一系列以name-value键值对的形式存储的数据">
 <meta property="og:locale">
-<meta property="og:image" content="https://wtlizzz.gitee.io/2020/08/02/images/demo1-pic1.png">
+<meta property="og:image" content="https://wtlizzz.gitee.io/.io//demo1-pic1.png">
 <meta property="article:published_time" content="2020-08-02T10:03:56.000Z">
-<meta property="article:modified_time" content="2020-08-02T10:19:36.143Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2020-08-03T06:28:54.544Z">
+<meta property="article:author" content="Wtli">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wtlizzz.gitee.io/2020/08/02/images/demo1-pic1.png">
+<meta name="twitter:image" content="https://wtlizzz.gitee.io/.io//demo1-pic1.png">
 
-<link rel="canonical" href="https://wtlizzz.gitee.io/2020/08/02/hello-world/">
+<link rel="canonical" href="https://wtlizzz.gitee.io/2020/08/02/gRPC/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>gRPC 4种rpc定义方法与3种stub介绍 | Hexo</title>
+  <title>gRPC 4种rpc定义方法与3种stub介绍 | 上善若水</title>
   
 
 
@@ -98,9 +98,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">上善若水</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">始终如一</p>
   </div>
 
   <div class="site-nav-right">
@@ -152,16 +153,16 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://wtlizzz.gitee.io/2020/08/02/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://wtlizzz.gitee.io/2020/08/02/gRPC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="name" content="Wtli">
+      <meta itemprop="description" content="不卑不亢">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="上善若水">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -174,10 +175,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-08-02 18:03:56 / Modified: 18:19:36" itemprop="dateCreated datePublished" datetime="2020-08-02T18:03:56+08:00">2020-08-02</time>
+              <time title="Created: 2020-08-02 18:03:56" itemprop="dateCreated datePublished" datetime="2020-08-02T18:03:56+08:00">2020-08-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-03 14:28:54" itemprop="dateModified" datetime="2020-08-03T14:28:54+08:00">2020-08-03</time>
+              </span>
 
           
 
@@ -191,13 +198,13 @@
 
       
         <h3 id="gRPC-What"><a href="#gRPC-What" class="headerlink" title="gRPC What"></a>gRPC What</h3><p>有关<a target="_blank" rel="noopener" href="https://www.grpc.io/docs/what-is-grpc/introduction/">gRPC官方介绍</a>：</p>
-<p><img src="../images/demo1-pic1.png" alt="alt run and talk to each other in a variety of environments"></p>
+<p><img src="/.io//demo1-pic1.png" alt="alt run and talk to each other in a variety of environments"></p>
 <p>gRPC是一个能在不同语言不同平台中进行高效通信的服务。gRPC默认使用Protocol Buffers数据格式：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Protocol Buffers：Google成熟的用于序列化结构化数据的开源机制（类似于JSON并且能与JSON一起使用）</span><br></pre></td></tr></table></figure>
 
 <p>Protocol Buffers以.proto作为拓展名，是一系列以name-value键值对的形式存储的数据格式。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">message  Person&#123;</span><br><span class="line"></span><br><span class="line">    string  name=1;</span><br><span class="line"></span><br><span class="line">    int32  id=2;</span><br><span class="line"></span><br><span class="line">    bool  has_ponycopter=3;    </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<a id="more"></a>
 <p>Protocol Buffers从开源到现在已经经过很长时间，目前已经到了proto3版本，有着更加简化的语法，更加有用的特性，能够支持更多的语言。你可以从proto3 language guide和 reference documentation看到更多有用的东西。另外.proto的文件格式能够从formal specification获取到更详细的讲解。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">As you can see, each field <span class="keyword">in</span> the message definition has a unique number. These field numbers are used to identify your fields <span class="keyword">in</span> the message binary format, and should not be changed once your message <span class="built_in">type</span> is <span class="keyword">in</span> use. Note that field numbers <span class="keyword">in</span> the range 1 through 15 take one byte to encode, including the field number and the field<span class="string">&#x27;s type (you can find out more about this in Protocol Buffer Encoding). Field numbers in the range 16 through 2047 take two bytes. So you should reserve the numbers 1 through 15 for very frequently occurring message elements. Remember to leave some room for frequently occurring elements that might be added in the future.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">The smallest field number you can specify is 1, and the largest is 229 - 1, or 536,870,911. You also cannot use the numbers 19000 through 19999 (FieldDescriptor::kFirstReservedNumber through FieldDescriptor::kLastReservedNumber), as they are reserved for the Protocol Buffers implementation - the protocol buffer compiler will complain if you use one of these reserved numbers in your .proto. Similarly, you cannot use any previously reserved field numbers.</span></span><br></pre></td></tr></table></figure>
 
@@ -242,7 +249,7 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/02/demo/" rel="prev" title="SpringBoot模拟gRPC通信">
+    <a href="/2020/08/02/SpringBoot%E6%A8%A1%E6%8B%9FgRPC%E9%80%9A%E4%BF%A1/" rel="prev" title="SpringBoot模拟gRPC通信">
       <i class="fa fa-chevron-left"></i> SpringBoot模拟gRPC通信
     </a></div>
       <div class="post-nav-item"></div>
@@ -310,8 +317,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
+  <p class="site-author-name" itemprop="name">Wtli</p>
+  <div class="site-description" itemprop="description">不卑不亢</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -350,7 +357,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Wtli</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

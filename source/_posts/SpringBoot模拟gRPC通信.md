@@ -1,7 +1,11 @@
 title: SpringBoot模拟gRPC通信
-date: 2020-08-02 12:40:45
+date: 2020-08-02 20:40:45
 tags:
 ---
+
+使用SpringBoot模拟gRPC通信，包括.proto文件编译、客户端实现、服务端实现、模拟双向流通信学习与实践。
+<!-- more -->
+
 ### 1、.proto文件编译
 在main目录下新建proto目录，创建hello.proto文件。文件内容如下：
 
@@ -36,11 +40,13 @@ service Greeter{//服务端接口方法
 
 }
 
-
 ```
+
+
 使用maven compile   编译之后会在target/generated-sources文件夹中增加protobuf文件夹。编译完之后目录如下：
-![alt proto编译后文件目录
-](../images/demo2-pic1.png)
+
+![aUIkzd.png](https://s1.ax1x.com/2020/08/03/aUIkzd.png)
+
 
 生成了在proto文件中service参数对应的Grpc类，在类中自动创建了newstub、newBlockingStub、newFutureStub三个方法。分别对应的是：
 ```
@@ -62,7 +68,10 @@ newFutureStub：Creates a new ListenableFuture-style stub that supports unary ca
 翻译一下就是创建一个未来监听stub，支持一元服务。
 
 文件中还包含了GreeterImplBase方法，通过继承该抽象类来实现一个service，添加到ServerBuilder中，GreeterImpl实现类中添加服务端处理.proto文件中service参数定义的rpc。
+
+
 #### 2、客户端实现
+
 使用GreeterGrpc.newBlockingStub(channel)，生成的Grpc文件中的Stub来发送请求。
 
 首先定义
@@ -90,7 +99,10 @@ HelloReply response;
 
 response =blockingStub.sayHello(request);
 ```
+
+
 #### 3、服务端实现
+
 在服务端实现上，重要的部分就是自定义实现.proto文件中定义的service参数中rpc方法。
 
 ```
@@ -117,7 +129,10 @@ HelloReply reply = HelloReply.newBuilder().setMessage("Hello " + req.getName()).
 server = ServerBuilder.forPort(port).addService((BindableService)new  GreeterImpl()).build().start();
 
 ```
+
 #### 4、模拟双向流通信
+
+
 服务端与普通通信差别不大，直接附代码
 
 ```
@@ -303,7 +318,7 @@ public static void main(String[] args)throws Exception {
 }
 ```
 最后附上运行图
-![alt 运行图](../images/demo2-pic2.png)
+![aUIEQA.png](https://s1.ax1x.com/2020/08/03/aUIEQA.png)
 
 
 

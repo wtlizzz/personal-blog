@@ -1,14 +1,16 @@
 title: gRPC 4种rpc定义方法与3种stub介绍
 date: 2020-08-02 18:03:56
 ---
+gRPC 4种rpc定义方法与3种stub介绍
+接触gRPC通信，对gRPC进行深入的了解与学习。包括Proto文件的格式，与编译方法的使用。
 
+<!-- more -->
 
 ### gRPC What
 
 有关[gRPC官方介绍](https://www.grpc.io/docs/what-is-grpc/introduction/)：
 
-![alt run and talk to each other in a variety of environments](../images/demo1-pic1.png)
-
+![aU5a2d.png](https://s1.ax1x.com/2020/08/03/aU5a2d.png)
 gRPC是一个能在不同语言不同平台中进行高效通信的服务。gRPC默认使用Protocol Buffers数据格式：
 
 ``` bash

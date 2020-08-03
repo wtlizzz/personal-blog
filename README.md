@@ -1,5 +1,8 @@
 # wtlizzz
 
+地址
+###https://wtlizzz.gitee.io
+
 ###new 新建一篇文章
 
     ```$ hexo new [layout] <title>```
