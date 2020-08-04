@@ -1,9 +1,9 @@
 title: gRPC 4种rpc定义方法与3种stub介绍
-date: 2020-08-02 18:03:56
 categories:
-    - 通信
+  - 通信
 tags:
-    - gRPC
+  - gRPC
+date: 2020-08-02 18:03:56
 ---
 gRPC 4种rpc定义方法与3种stub介绍
 接触gRPC通信，对gRPC进行深入的了解与学习。包括Proto文件的格式，与编译方法的使用。
@@ -45,7 +45,7 @@ The smallest field number you can specify is 1, and the largest is 229 - 1, or 5
 
 每个参数带有一个唯一的标识符，这些标识符被用来在message的二进制中被识别出来。不是代表每个数据的数值。
 
-## Why use gRPC? 
+### Why use gRPC? 
 
 有了gRPC，我们可以在.proto文件中定义我们的服务，并用gRPC支持的任何语言生成客户端和服务器，它可以在从大型数据中心内的服务器到您自己的平板电脑的各种环境中运行，不同语言和环境之间的所有复杂通信都由gRPC为您处理。我们还获得了使用协议缓冲区的所有优点，包括高效的序列化、简单的IDL和容易的接口更新。
 
@@ -80,6 +80,7 @@ service  RouteGuide {
 
 	}
 ```
+### 三种Stub使用和方法区别
 区别在客户端调用Grpc中Stub发送请求方法时：
 
 #### newStub
