@@ -2,12 +2,22 @@ sudo: false
 language: node_js
 node_js:
   - 10 # use nodejs v10 LTS
-cache: npm
+install:
+  - npm install
 branches:
   only:
     - master # build master branch only
 script:
+  - hexo cl   #清除
   - hexo generate # generate static files
+after_script:
+  - cd ./public
+  - git init
+  - git config user.namem "wtlizzz"
+  - git config user.email "617085130@qq.com"
+  - git add .
+  - git commit -m 'Update'
+  - git push -f "https://${GH_TOKEN}@${GH_REF}" master:master"
 deploy:
   provider: pages
   skip-cleanup: true
@@ -16,3 +26,6 @@ deploy:
   on:
     branch: master
   local-dir: public
+env:
+  global:
+    - GH_REF: github.com/wtlizzz/wtlizzz.github.io.git
