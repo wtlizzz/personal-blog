@@ -110,3 +110,14 @@ deploy:
 #  username: wtlizzz
 #  password_hash: $2a$10$KO4GyTQER0ptYmDNJOjqSem4MLWBa8wmhev6bMUfRo1qrn8jff2s2
 #  secret: my super secret phrase
+
+#hexo-symbols-count-time
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: false
+  total_time: false
+  exclude_codeblock: false
+  awl: 4
+  wpm: 275
+  suffix: "mins."
