@@ -3,13 +3,83 @@
   <component name="ChangeListManager">
     <list default="true" id="c811fafb-6bb0-4d09-a101-df37246b6688" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/2020/08/02/SpringBoot模拟gRPC通信/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/2020/08/02/SpringBoot模拟gRPC通信/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/about/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/search.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/SpringBoot模拟gRPC通信.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/SpringBoot模拟gRPC通信.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.nojekyll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/08/02/SpringBoot模拟gRPC通信/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/08/02/gRPC/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/08/03/compile太慢/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/2020/08/04/SpringBoot集成Redis/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/404/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/about/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2020/08/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/2020/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/archives/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/编译器/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/通信/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/集成/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/algolia_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/apple-touch-icon-next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/avatar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by-nc-nd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by-nc-sa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by-nc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by-nd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by-sa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-by.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cc-zero.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/demo1-pic1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/demo2-pic1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/demo2-pic2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon-16x16-next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/favicon-32x32-next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/my_boy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/algolia-search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bookmark.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/local-search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/motion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/next-boot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/schemes/muse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/schemes/pisces.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/anime.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/font-awesome/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/font-awesome/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/font-awesome/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/font-awesome/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/README.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/canvas_lines.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/canvas_sphere.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/gulpfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/lib/CanvasRenderer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/lib/Projector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/renovate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/src/canvas_lines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/src/canvas_sphere.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/src/three-waves.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/three-waves.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/three/three.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/velocity/velocity.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/lib/velocity/velocity.ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/search.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/subdomainname/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/IDEA/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/Redis/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/SpringBoot/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/gRPC/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/maven/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/模拟通信/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/SpringBoot集成Redis.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/SpringBoot集成Redis.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/next/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/next/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/next/source/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/next/source/js/utils.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,28 +93,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_config.yml">
+        <entry file="file://$PROJECT_DIR$/themes/next/source/js/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1215">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+            <state relative-caret-position="387">
+              <caret line="293" column="20" selection-start-line="293" selection-start-column="20" selection-end-line="293" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
+        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="638" column="40" lean-forward="true" selection-start-line="638" selection-start-column="40" selection-end-line="638" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="32" selection-end-line="32" />
+            <state relative-caret-position="169">
+              <caret line="536" column="18" selection-start-line="536" selection-start-column="18" selection-end-line="536" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -60,18 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>auto</find>
-      <find>post_asset_folder</find>
-      <find>scheme</find>
-      <find>rel=&quot;tag&quot;&gt;#</find>
-      <find>tag_icon</find>
-      <find>favicon</find>
-      <find>tag</find>
-      <find>local_search</find>
-      <find>pace</find>
-      <find>word</find>
-      <find>wordcount</find>
-      <find>highlight_theme</find>
       <find>commonweal</find>
       <find>404</find>
       <find>since:</find>
@@ -87,11 +136,28 @@
       <find>three</find>
       <find>include</find>
       <find>title</find>
+      <find>getBoundingClientRect</find>
+      <find>Cache-Control</find>
+      <find>ca</find>
+      <find>cache</find>
       <find>lan</find>
+      <find>language</find>
+      <find>menu</find>
+      <find>aside</find>
+      <find>nav-link</find>
+      <find>active-current</find>
+      <find>activateNavByIndex</find>
+      <find>IntersectionObserverEntry</find>
+      <find>IntersectionObserverEntryInit</find>
+      <find>IntersectionObserver</find>
+      <find>entries</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/themes</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/themes/next" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -124,6 +190,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/themes/next/_config.yml" />
+        <option value="$PROJECT_DIR$/themes/next/source/js/utils.js" />
       </list>
     </option>
   </component>
@@ -164,7 +231,15 @@
               <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
               <item name="themes" type="462c0819:PsiDirectoryNode" />
               <item name="next" type="462c0819:PsiDirectoryNode" />
-              <item name="languages" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hexo-blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="next" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -221,12 +296,13 @@
       <workItem from="1596413819714" duration="16373000" />
       <workItem from="1596497934716" duration="1942000" />
       <workItem from="1596503118809" duration="2765000" />
-      <workItem from="1596523734280" duration="3058000" />
+      <workItem from="1596523734280" duration="3934000" />
+      <workItem from="1596538491371" duration="3859000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30550000" />
+    <option name="totallyTimeSpent" value="35285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
@@ -246,7 +322,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.39363056" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.39363056" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -281,26 +357,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/css/images/banner.jpg" />
-    <entry file="file://$PROJECT_DIR$/public/js/script.js" />
-    <entry file="file://$PROJECT_DIR$/scaffolds/post.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="95">
-            <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scaffolds/page.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scaffolds/draft.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -346,23 +402,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_data/next.yml" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="114">
-            <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/images/demo1-pic1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -485,13 +524,6 @@
     <entry file="file://$PROJECT_DIR$/source/.nojekyll">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/gRPC.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -543,24 +575,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="638" column="40" lean-forward="true" selection-start-line="638" selection-start-column="40" selection-end-line="638" selection-end-column="40" />
+        <state relative-caret-position="162">
+          <caret line="60" column="26" lean-forward="true" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="32" selection-end-line="32" />
+        <state relative-caret-position="144">
+          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_admin-config.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1215">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="188">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="114">
+            <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_macro/sidebar.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="212" column="13" lean-forward="true" selection-start-line="212" selection-start-column="13" selection-end-line="212" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/landscape/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="536" column="18" selection-start-line="536" selection-start-column="18" selection-end-line="536" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/source/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="293" column="20" selection-start-line="293" selection-start-column="20" selection-end-line="293" selection-end-column="20" />
         </state>
       </provider>
     </entry>
