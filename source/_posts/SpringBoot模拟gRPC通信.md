@@ -74,7 +74,7 @@ newFutureStub：Creates a new ListenableFuture-style stub that supports unary ca
 文件中还包含了GreeterImplBase方法，通过继承该抽象类来实现一个service，添加到ServerBuilder中，GreeterImpl实现类中添加服务端处理.proto文件中service参数定义的rpc。
 
 
-### aaa
+### 客户端通信实现
 
 使用GreeterGrpc.newBlockingStub(channel)，生成的Grpc文件中的Stub来发送请求。
 
@@ -105,7 +105,7 @@ response =blockingStub.sayHello(request);
 ```
 
 
-#### bbb
+#### 服务端通信实现
 
 在服务端实现上，重要的部分就是自定义实现.proto文件中定义的service参数中rpc方法。
 
@@ -134,7 +134,7 @@ server = ServerBuilder.forPort(port).addService((BindableService)new  GreeterImp
 
 ```
 
-### ccc
+### 服务端双向流通信实现
 
 
 服务端与普通通信差别不大，直接附代码
@@ -225,7 +225,7 @@ public class StreamServiceImplextends StreamServiceGrpc.StreamServiceImplBase {
 
 }
 ```
-客户端实现
+### 客户端双向流通信实现
 客户端部分实现了StreamObserver<streamResponse>，用来接收服务端返回的数据。
 
 发送是使用StreamObserver<streamRequest> request.onNext来发送。
