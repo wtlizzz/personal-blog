@@ -1,7 +1,7 @@
 # wtlizzz
 
 地址
-###https://wtlizzz.gitee.io
+###https://www.wtlizzz.com
 
 ###new 新建一篇文章
 
