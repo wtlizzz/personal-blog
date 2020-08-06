@@ -3,7 +3,7 @@ categories:
   - 通信
 tags:
   - gRPC
-date: 2020-08-02 18:03:56
+date: 2020-08
 ---
 gRPC 4种rpc定义方法与3种stub介绍
 接触gRPC通信，对gRPC进行深入的了解与学习。包括Proto文件的格式，与编译方法的使用。
