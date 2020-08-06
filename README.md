@@ -40,9 +40,7 @@ $ hexo server
  
 ###deploy  部署网站
 ```angular2
-$ hexo deploy 
-
-$ hexo clean && hexo deploy 
+$ hexo deploy
 ```
    
 ###clean    清除缓存文件

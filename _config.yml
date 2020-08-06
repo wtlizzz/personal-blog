@@ -106,10 +106,9 @@ theme: next
 #deploy:
 #  type: ''
 deploy:
-    type: git
+  - type: git
     repo: https://github.com/wtlizzz/wtlizzz.github.io.git
     branch: master
-    message: hexo deploy
     ignore_hidden: false
 
 ## hexo-admin authentification
