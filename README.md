@@ -2,6 +2,8 @@
 
 地址
 ###https://www.wtlizzz.com
+github地址：origin  personalweb
+github deploy地址： blog
 
 ###new 新建一篇文章
 

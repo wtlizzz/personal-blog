@@ -86,13 +86,14 @@ String value = commands.get("foo");                                    (4)
 connection.close();                                                    (5)
 client.shutdown();
 ```
-1、创建RedisClient实例并提供一个指向本地主机端口6379（默认端口）的Redis URI。  
-2、打开Redis Standalone连接。从初始化使用端点RedisClient  
-3、获取用于同步执行的命令API。Lettuce也支持异步和反应式执行模型。  
-4、发出GET命令以获取密钥foo。  
-5、完成后关闭连接。这通常发生在应用程序的最后。连接被设计为长寿命的。  
-6、关闭客户端实例以释放线程和资源。这通常发生在应用程序的最后。
+1. 创建RedisClient实例并提供一个指向本地主机端口6379（默认端口）的Redis URI。  
+2. 打开Redis Standalone连接。从初始化使用端点RedisClient  
+3. 获取用于同步执行的命令API。Lettuce也支持异步和反应式执行模型。  
+4. 发出GET命令以获取密钥foo。  
+5. 完成后关闭连接。这通常发生在应用程序的最后。连接被设计为长寿命的。  
+6. 关闭客户端实例以释放线程和资源。这通常发生在应用程序的最后。
 <font color = gray >Redis连接被设计为长期存在并且是线程安全的，如果连接丢失，将重新连接直到close()被调用。成功重新连接后，将（重新）发送尚未超时的未决命令。</font>
+
 #### RedisURI
 
 RedisURI包含主机/端口，并且可以携带身份验证/数据库详细信息。连接成功后，您将获得身份验证，然后选择数据库。这在连接断开后重新建立连接之后也适用。
@@ -123,3 +124,145 @@ class AppConfig {
 #### 通过RedisTemplate处理对象
 配置后，该模板是线程安全的，并且可以在多个实例之间重用。
 
+在配置文件中配置
+```
+
+@Configuration
+@Slf4j
+public class RedisConfig {
+	//获取配置参数
+    @Value("${spring.redis.host}")
+    private String redisHostName;
+    @Value("${spring.redis.password}")
+    private String redisPwd;
+    @Value("${spring.redis.port}")
+    private int redisPort;
+    @Value("${spring.redis.lettuce.pool.max-idle}")
+    private int maxIdle;
+    @Value("${spring.redis.lettuce.pool.min-idle}")
+    private int minIdle;
+    @Value("${spring.redis.lettuce.pool.max-active}")
+    private int maxActive;
+    @Value("${spring.redis.lettuce.pool.max-wait}")
+    private Long maxWait;
+    @Value("${spring.redis.timeout}")
+    private Long timeOut;
+    @Value("${spring.redis.lettuce.shutdown-timeout}")
+    private Long shutdownTimeOut;
+    ···
+
+```
+
+redis数据库中有16个分块，分别是db0-db15，相当于16个内部的数据库，内部的key和value不会互相干扰。通过setDatabase方法来选择数据库,详细配置RedisConnectionFactory连接池如下：
+```
+    @Bean
+    public RedisConnectionFactory redisConnectionFactory() {
+        //redis配置
+        RedisStandaloneConfiguration rsc = new RedisStandaloneConfiguration();
+        rsc.setDatabase(DB_INDEX);
+        rsc.setHostName(redisHostName);
+        rsc.setPort(redisPort);
+        rsc.setPassword(redisPwd);
+        //连接池配置
+        GenericObjectPoolConfig<RedisConfig> genericObjectPoolConfig = new GenericObjectPoolConfig<RedisConfig>();
+        genericObjectPoolConfig.setMaxIdle(maxIdle);
+        genericObjectPoolConfig.setMinIdle(minIdle);
+        genericObjectPoolConfig.setMaxWaitMillis(maxWait);
+        genericObjectPoolConfig.setMaxTotal(maxActive);
+        //redis客户端配置
+        LettucePoolingClientConfiguration.LettucePoolingClientConfigurationBuilder
+                builder = LettucePoolingClientConfiguration.builder().
+                commandTimeout(Duration.ofMillis(timeOut));
+        builder.shutdownTimeout(Duration.ofMillis(shutdownTimeOut));
+        builder.poolConfig(genericObjectPoolConfig);
+        LettuceClientConfiguration lettuceClientConfiguration = builder.build();
+        //根据配置和客户端配置创建连接
+        LettuceConnectionFactory lettuceConnectionFactory = new
+                LettuceConnectionFactory(rsc, lettuceClientConfiguration);
+        lettuceConnectionFactory.afterPropertiesSet();
+        return lettuceConnectionFactory;
+    }
+```
+
+通过连接池的配置，来对RedisTemplate实现
+```
+    @Bean
+    public RedisTemplate<Object, Object> redisTemplate() {
+        RedisTemplate<Object, Object> template = new RedisTemplate<>();
+        template.setValueSerializer(fastJsonRedisSerializer());
+        template.setHashValueSerializer(fastJsonRedisSerializer());
+        template.setKeySerializer(new StringRedisSerializer());
+        template.setHashKeySerializer(new StringRedisSerializer());
+        template.setConnectionFactory(redisConnectionFactory());
+        return template;
+    }
+```
+
+之后在使用的时候就可以直接@Autowired
+```
+@Autowired
+private RedisTemplate redisTemplate;
+```
+### gRPC集成使用Redis存储
+
+````
+@GrpcService
+public class TransformNetInfoImpl extends NetInfoServiceGrpc.NetInfoServiceImplBase {
+
+    private Logger logger = Logger.getLogger(TransformNetInfoImpl.class.getName() + ".GRPC");
+
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    @Override
+    public void transformNetInfoSimple(NetInfoRequest request, StreamObserver<NetInfoResponse> responseObserver) {
+
+        String netInfo = "id:" + request.getId() + "\t"
+                + "isTcp:" + request.getIsTcp() + "\t"
+                + "src:" + request.getSrc() + "\t"
+                + "dst:" + request.getDst() + "\t"
+                + "sport:" + request.getSport() + "\t"
+                + "dport:" + request.getDport() + "\t"
+                + "mark:" + request.getMark();
+        logger.info("Receive Net Info:" + netInfo);
+        redisTemplate.opsForValue().set(request.getId(), netInfo);
+        NetInfoResponse reply = NetInfoResponse.newBuilder().setAcceptInfo(("I got id:" + request.getId())).build();
+        responseObserver.onNext(reply);
+        responseObserver.onCompleted();
+        logger.info("Message from gRPC-Client:" + request.getId());
+    }
+
+    @Override
+    public StreamObserver<NetInfoRequest> transformNetInfo(StreamObserver<NetInfoResponse> responseObserver) {
+        return new StreamObserver<NetInfoRequest>() {
+
+            @Override
+            public void onNext(NetInfoRequest request) {
+                String netInfo = "id:" + request.getId() + "\t"
+                        + "isTcp:" + request.getIsTcp() + "\t"
+                        + "src:" + request.getSrc() + "\t"
+                        + "dst:" + request.getDst() + "\t"
+                        + "sport:" + request.getSport() + "\t"
+                        + "dport:" + request.getDport() + "\t"
+                        + "mark:" + request.getMark();
+                logger.info("Receive Net Info:" + netInfo);
+                redisTemplate.opsForValue().set(request.getId(), netInfo);
+                NetInfoResponse response = NetInfoResponse.newBuilder().setAcceptInfo("I Get Id : " + request.getId()).build();
+                responseObserver.onNext(response);
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                logger.warning("Stupid TransformNetInfoImpl.transformNetInfo error : " + t.getMessage());
+            }
+
+            @Override
+            public void onCompleted() {
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                responseObserver.onCompleted();
+                logger.info("Receive TransformNetInfoImpl.transformNetInfo onCompleted Time is : " + df.format(new Date()));
+            }
+        };
+    }
+}
+````

@@ -1,3 +1,8 @@
+---
+title: 
+date: 2020-08-03 16:53:02
+type: "404"
+---
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -5,14 +10,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="robots" content="all" />
     <meta name="robots" content="index,follow"/>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css">
 </head>
+
 <body>
-<script type="text/plain" src="http://www.qq.com/404/search_children.js"
-        charset="utf-8" homePageUrl="/"
-        homePageName="回到我的主页">
-</script>
+<script type="text/javascript" src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" charset="utf-8" homePageUrl="/" homePageName="回到我的主页"></script>
 <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
 <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
 </body>
 </html>
+
