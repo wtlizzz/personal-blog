@@ -1,12 +1,13 @@
 title: SpringBoot AOP集成监听日志
 author: Wtli
-date: 2020-08-07 09:55:25
 categories:
-  - 集成
+  - 后端
+  - ''
 tags:
+  - SpringBoot
   - AOP
   - 日志
-  - SpringBoot
+date: 2020-08-07 09:55:00
 ---
 ### 什么是AOP
     AOP（Aspect Oriented Programming），即面向切面编程。
@@ -47,6 +48,8 @@ tags:
 
 
 ### 配置代码
+
+**正常配置**
 ```
 import com.google.gson.Gson;
 import org.aspectj.lang.JoinPoint;
@@ -125,5 +128,23 @@ public class WebLogAspect {
 
 }
 ```
+
+** maven项目模块化配置 **  
+通过自定义注解，在其他方法中加入注解即能使用AOP日志。
+```
+$ 在AOP配置文件中将切点配置为下
+
+/** 以 @Log 注解下定义的所有请求为切入点 */
+@Pointcut("@annotation(com.aircas.aspect.aop.log.Log)")
+
+$ 自定义注解@Log文件如下
+
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface  Log {
+	String value() default "";
+}
+```
+
 ### 运行结果
 ![aWAOX9.png](https://s1.ax1x.com/2020/08/07/aWAOX9.png)

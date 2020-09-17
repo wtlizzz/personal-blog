@@ -1,15 +1,62 @@
-title: IDEA maven compile太慢
-date: 2020-08-03 12:51:01
+title: maven入门
 categories:
-    - 编译器
+  - 后端
+  - ''
 tags:
-    - maven  
-    - IDEA
+  - maven
+  - IDEA
+date: 2020-08-03 12:51:00
 ---
+今天做maven项目模块化，依赖其他项目需要install一下重新打jar包，学识太浅耽误了几分钟，在此学习下maven常用命令。  
 
-添加Ali镜像解决，IDEA maven compile太慢
 <!--more-->
 
+Idea中maven的功能大部分就这几个：  
+❀ clean  
+❀ validate  
+❀ compile  
+❀ test  
+❀ package  
+❀ verify  
+❀ install  
+❀ site  
+❀ deploy  
+
+### 常用命令介绍
+
+```
+$ maven clean ：清除以前编译的代码，删除target目录和相关内容删除
+```
+![dfzTKO.png](https://s1.ax1x.com/2020/08/27/dfzTKO.png)
+```
+$ maven validate 
+```
+```
+$ maven compile ：编译项目主目录下边的代码（main下的代码）–下载main相关代码依赖的外部资源
+```
+```
+$ maven test ：编译项目主目录下边的test代码（编译test之前一定编译main代码，保证main正常编译成功）–下载test依赖的外部资源 前提需要执行mvn compile（若不主动执行，命令会自动执行mvn compile）
+```
+```
+$ maven package 
+```
+```
+$ maven verify 
+```
+```
+$ maven install ：把编译好的class文件和下载的jar都打成一个完整的*.jar文件，直接使用jar包可以进行部署
+```
+```
+$ maven site : 生成项目报告，站点，发布站点。
+```
+[![dfz7rD.png](https://s1.ax1x.com/2020/08/27/dfz7rD.png)](https://imgchr.com/i/dfz7rD)
+```
+$ maven deploy 
+```
+[![dfzqVH.png](https://s1.ax1x.com/2020/08/27/dfzqVH.png)](https://imgchr.com/i/dfzqVH)
+
+### IDEA maven compile太慢
+添加Ali镜像解决，IDEA maven compile太慢
 在此记录一下解决方案：
 
 有的人是单纯配置的maven，在    ~/.m2/setting.xml修改，找到<mirrors>标签处增加

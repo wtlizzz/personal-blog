@@ -83,9 +83,9 @@ export default {
 - 在Tabs and Indents中将4个空格改成2个
 
 <font color=gray>小知识：使用
-```
-&lt;script&gt;
-```
+
+```&lt; script &gt;```
+
 转义字符显示
 ```
 <script>

@@ -4,7 +4,8 @@ tags:
   - SpringBoot
   - Redis
 categories:
-  - 集成
+  - 后端
+  - ''
 date: 2020-08-04 09:21:00
 ---
 SpringBoot对Redis的集成，包括在gRPC双向流传输中使用Redis存储。
@@ -153,47 +154,48 @@ public class RedisConfig {
 
 ```
 
-redis数据库中有16个分块，分别是db0-db15，相当于16个内部的数据库，内部的key和value不会互相干扰。通过setDatabase方法来选择数据库,详细配置RedisConnectionFactory连接池如下：
-```
-    @Bean
-    public RedisConnectionFactory redisConnectionFactory() {
-        //redis配置
-        RedisStandaloneConfiguration rsc = new RedisStandaloneConfiguration();
-        rsc.setDatabase(DB_INDEX);
-        rsc.setHostName(redisHostName);
-        rsc.setPort(redisPort);
-        rsc.setPassword(redisPwd);
-        //连接池配置
-        GenericObjectPoolConfig<RedisConfig> genericObjectPoolConfig = new GenericObjectPoolConfig<RedisConfig>();
-        genericObjectPoolConfig.setMaxIdle(maxIdle);
-        genericObjectPoolConfig.setMinIdle(minIdle);
-        genericObjectPoolConfig.setMaxWaitMillis(maxWait);
-        genericObjectPoolConfig.setMaxTotal(maxActive);
-        //redis客户端配置
-        LettucePoolingClientConfiguration.LettucePoolingClientConfigurationBuilder
+redis数据库中有16个分块，分别是db0-db15，相当于16个内部的数据库，内部的key和value不会互相干扰。~~通过setDatabase方法来选择数据库,详细配置RedisConnectionFactory连接池如下：
+@Bean
+public RedisConnectionFactory redisConnectionFactory() {
+    //redis配置
+    RedisStandaloneConfiguration rsc = new RedisStandaloneConfiguration();
+    rsc.setDatabase(DB_INDEX);
+    rsc.setHostName(redisHostName);
+    rsc.setPort(redisPort);
+    rsc.setPassword(redisPwd);
+    //连接池配置
+    GenericObjectPoolConfig<RedisConfig> genericObjectPoolConfig = new GenericObjectPoolConfig<RedisConfig>();
+    genericObjectPoolConfig.setMaxIdle(maxIdle);
+    genericObjectPoolConfig.setMinIdle(minIdle);
+    genericObjectPoolConfig.setMaxWaitMillis(maxWait);
+    genericObjectPoolConfig.setMaxTotal(maxActive);
+    //redis客户端配置  
+    LettucePoolingClientConfiguration.LettucePoolingClientConfigurationBuilder
                 builder = LettucePoolingClientConfiguration.builder().
                 commandTimeout(Duration.ofMillis(timeOut));
-        builder.shutdownTimeout(Duration.ofMillis(shutdownTimeOut));
-        builder.poolConfig(genericObjectPoolConfig);
-        LettuceClientConfiguration lettuceClientConfiguration = builder.build();
+    builder.shutdownTimeout(Duration.ofMillis(shutdownTimeOut));
+    builder.poolConfig(genericObjectPoolConfig);
+    LettuceClientConfiguration lettuceClientConfiguration = builder.build();
         //根据配置和客户端配置创建连接
-        LettuceConnectionFactory lettuceConnectionFactory = new
-                LettuceConnectionFactory(rsc, lettuceClientConfiguration);
-        lettuceConnectionFactory.afterPropertiesSet();
-        return lettuceConnectionFactory;
-    }
-```
-
-通过连接池的配置，来对RedisTemplate实现
+    LettuceConnectionFactory lettuceConnectionFactory = new
+            LettuceConnectionFactory(rsc, lettuceClientConfiguration);
+    lettuceConnectionFactory.afterPropertiesSet();
+    return lettuceConnectionFactory;
+}
+通过连接池的配置~~，
+  
+  **目前SpringBoot能自动读取application配置文件中的参数，去进行设置，不再去自行配置。**
+  
+  来对RedisTemplate实现
 ```
     @Bean
-    public RedisTemplate<Object, Object> redisTemplate() {
+    public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory factory) {
         RedisTemplate<Object, Object> template = new RedisTemplate<>();
         template.setValueSerializer(fastJsonRedisSerializer());
         template.setHashValueSerializer(fastJsonRedisSerializer());
         template.setKeySerializer(new StringRedisSerializer());
         template.setHashKeySerializer(new StringRedisSerializer());
-        template.setConnectionFactory(redisConnectionFactory());
+        template.setConnectionFactory(factory);
         return template;
     }
 ```

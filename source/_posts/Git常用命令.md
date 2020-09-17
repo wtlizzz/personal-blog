@@ -3,11 +3,14 @@ author: Wtli
 tags:
   - Git
 categories:
-  - Git
+  - 工具
+  - ''
 date: 2020-08-14 13:51:00
 ---
 记录自己日常使用的命令（好忘记的）
+
 <!--more-->
+
 - 删除本地add的缓存文件
 ```
 $ git rm -r --cached <文件名>
