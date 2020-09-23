@@ -3,22 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c811fafb-6bb0-4d09-a101-df37246b6688" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Git常用命令.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Git常用命令.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/SpringBoot-AOP集成.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/SpringBoot-AOP集成.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/SpringBoot模拟gRPC通信.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/SpringBoot模拟gRPC通信.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/SpringBoot集成Redis.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/SpringBoot集成Redis.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/Vue构建网络拓扑图.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Vue构建网络拓扑图.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/compile太慢.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/compile太慢.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/gRPC.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/gRPC.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/AOP运行结果.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/images/AOP/AOP运行结果.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/Vue生命周期.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/images/VUE爬坑指南/Vue生命周期.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/demo1-pic1.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/images/gRPC/demo1-pic1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/demo2-pic1.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/images/gRPC/demo2-pic1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/demo2-pic2.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/images/gRPC/demo2-pic2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/爬坑指南error.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/images/VUE爬坑指南/爬坑指南error.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/爬坑指南eslint.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/images/VUE爬坑指南/爬坑指南eslint.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/爬坑指南引入图片.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/images/VUE爬坑指南/爬坑指南引入图片.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/images/配置sass.png" beforeDir="false" afterPath="$PROJECT_DIR$/source/images/VUE爬坑指南/配置sass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/Netty学习.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/Netty学习.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/SpringBoot.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/SpringBoot.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/next/source/css/main.styl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/next/source/css/main.styl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/next/source/js/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/next/source/js/utils.js" afterDir="false" />
     </list>
@@ -178,7 +164,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="51" />
+    <option name="x" value="48" />
     <option name="y" value="-1057" />
     <option name="width" value="1206" />
     <option name="height" value="1057" />
@@ -214,7 +200,7 @@
               <item name="hexo-blog" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="JavaNIO" type="462c0819:PsiDirectoryNode" />
+              <item name="dubbo学习" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -241,11 +227,11 @@
       <recent name="$PROJECT_DIR$/source" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source/images/dubbo学习" />
+      <recent name="$PROJECT_DIR$/source/images/netty实战" />
+      <recent name="$PROJECT_DIR$/source/images/netty" />
       <recent name="$PROJECT_DIR$/source/images/JavaNIO" />
       <recent name="$PROJECT_DIR$/source/images/VUE爬坑指南" />
-      <recent name="$PROJECT_DIR$/source/images/druid" />
-      <recent name="$PROJECT_DIR$/source/images/计算机网络" />
-      <recent name="$PROJECT_DIR$/source/images/swagger" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -305,7 +291,10 @@
       <workItem from="1599719539270" duration="138000" />
       <workItem from="1600160893120" duration="161000" />
       <workItem from="1600218526074" duration="904000" />
-      <workItem from="1600299804875" duration="1887000" />
+      <workItem from="1600299804875" duration="2305000" />
+      <workItem from="1600408346976" duration="259000" />
+      <workItem from="1600646948591" duration="435000" />
+      <workItem from="1600733816175" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="0805">
       <created>1596585522112</created>
@@ -318,7 +307,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61972000" />
+    <option name="totallyTimeSpent" value="63743000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -330,9 +319,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="-1057" width="1206" height="1057" extended-state="0" />
+    <frame x="48" y="-1057" width="1206" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22869198" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22869198" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -346,7 +336,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.25181347" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.25181347" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -687,16 +677,16 @@
     <entry file="file://$PROJECT_DIR$/source/images/gRPC/demo2-pic1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/images/AOP/AOP运行结果.png">
+    <entry file="file://$PROJECT_DIR$/source/images/gRPC/demo1-pic1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/images/gRPC/demo1-pic1.png">
+    <entry file="file://$PROJECT_DIR$/source/images/druid/druid.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/source/images/maven/mavenClean.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/images/druid/druid.png">
+    <entry file="file://$PROJECT_DIR$/source/images/AOP/AOP运行结果.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/source/images/VUE爬坑指南/配置sass.png">
