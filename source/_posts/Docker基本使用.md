@@ -2,9 +2,8 @@ title: Docker入门
 author: Wtli
 tags:
   - Docker
-  - gRPC-web
 categories:
-  - 后端
+  - Docker
 date: 2020-08-17 09:28:00
 ---
 因为疫情，好久没有敲代码了，都忘了差不多了，再记录一下docker的使用命令。
@@ -59,7 +58,7 @@ Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需�
 
 仓库名经常以 两段式路径 形式出现，比如 jwilder/nginx-proxy ，前者往往意 味着 Docker Registry 多用户环境下的用户名，后者则往往是对应的软件名。但这 并非绝对，取决于所使用的具体 Docker Registry 的软件或服务。
 
-### 使用 Docker 镜像
+### Docker镜像
 
 Docker 运行容器前需要本地存在对应的镜像，如果本地不存在该镜像，Docker 会从镜像仓库下载该镜像。 
 - 从仓库获取镜像； 
@@ -120,3 +119,29 @@ $ docker image rm [选项] <镜像1> [<镜像2> ...]
 ```
 #### 用 ID、镜像名、摘要删除镜像
 <镜像>可以是镜像短 ID、镜像长 ID、镜像名或者镜像摘要。
+
+
+### Docker容器
+
+**镜像是容器的基础，每次执行 docker run 的时候都会指定哪个镜像作为容器运 行的基础。**
+
+#### 启动容器
+
+```
+$ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+$ docker run --name webserver -d -p 80:80 nginx
+```
+这条命令会用 nginx 镜像启动一个容器，命名为webserver,并且映射了80端口，这样我们可以用浏览器去访问这个nginx服务器。
+
+#### 查看容器列表
+
+```
+$ docker container ls
+```
+![0k8ma6.png](https://s1.ax1x.com/2020/09/27/0k8ma6.png)
+
+#### 保存容器为镜像
+```
+$ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+$ docker commit [选项] <容器ID或容器名> [<仓库名>[:<标签>]]
+```

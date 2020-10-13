@@ -1,19 +1,33 @@
-title: Netty应用
+title: Netty实践
 author: Wtli
 tags:
   - Netty
 categories: []
 date: 2020-09-21 09:23:00
 ---
-使用Netty创建不同类型的通信服务器。**本文----只是代码**
-- Fundamental
-- Text protocols
-- Binary protocols
-- HTTP
-- Advanced
-- UDT
+学习Netty权威指南第二版。实践里面饿的代码。
 
 <!-- more -->
+
+### NIO入门
+
+1. 传统的同步阻塞式IO编程
+2. 基于NIO的非阻塞编程
+3. 基于NIO2.0的异步非阻塞（AIO）编程
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### HTTP
 
@@ -662,16 +676,3 @@ public class HttpStaticFileServerInitializer extends ChannelInitializer<SocketCh
 
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
