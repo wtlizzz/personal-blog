@@ -5,7 +5,7 @@ tags:
 categories: []
 date: 2020-09-16 17:08:00
 ---
-Java.nio是当前流行框架Netty的底层实现，本文对Java.nio进行学习，这也是Java的很重要的基础包。另附上[参考网站](http://tutorials.jenkov.com/java-nio/index.html)。
+Java.nio是当前流行框架Netty的底层实现，本文对Java.nio进行学习，这也是Java的很重要的基础包。
 
 <!-- more -->
 #### Java NIO 简介
@@ -498,7 +498,7 @@ select()方法返回的int表示有多少通道已经准备好了。也就是说
 ```
 Set<SelectionKey> selectedKeys = selector.selectedKeys();    
 ```
-当您使用选择器注册一个通道时，channel .register()方法返回一个SelectionKey对象。此键表示使用该选择器注册的通道。您可以通过selectedKeySet()方法访问这些键。从SelectionKey。您可以迭代这个选定的键集来访问就绪通道。这是它的样子:
+当您使用选择器注册一个通道时，channel.register()方法返回一个SelectionKey对象。此键表示使用该选择器注册的通道。您可以通过selectedKeySet()方法访问这些键。从SelectionKey中可以获得这个选定的键集来访问就绪通道:
 
 ```
 Set<SelectionKey> selectedKeys = selector.selectedKeys();
@@ -1748,3 +1748,4 @@ fileChannel.write(buffer, position, buffer, new CompletionHandler<Integer, ByteB
 
 --- 完结 ---
 
+另附上[参考网站](http://tutorials.jenkov.com/java-nio/index.html)。

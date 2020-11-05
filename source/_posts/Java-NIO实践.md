@@ -1,7 +1,11 @@
 title: Java NIO实践
 author: Wtli
-date: 2020-09-24 14:48:20
 tags:
+  - Java NIO
+categories:
+  - 后端
+  - ''
+date: 2020-09-24 14:48:00
 ---
 本文主要对Java NIO进行实践学习介绍，并对代码进化史简单说明：  
 传统BIO通信 --> 伪异步通信编程 --> Java NIO通信编程。  

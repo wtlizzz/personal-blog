@@ -56,19 +56,16 @@ service Greeter{//服务端接口方法
 生成了在proto文件中service参数对应的Grpc类，在类中自动创建了newstub、newBlockingStub、newFutureStub三个方法。分别对应的是：
 ```
 newstub：Creates a new async stub that supports all call types for the service
-
 ```
 翻译一下就是创建一个异步的stub，支持所有类型的service。
 
 ```
 newBlockingStub：Creates a new blocking-style stub that supports unary and streaming output calls on the service
-
 ```
 翻译一下就是创建一个新的阻塞式的stub，能够支持一元和流式输出调用。
 
 ```
 newFutureStub：Creates a new ListenableFuture-style stub that supports unary calls on the service
-
 ```
 翻译一下就是创建一个未来监听stub，支持一元服务。
 
@@ -83,14 +80,11 @@ newFutureStub：Creates a new ListenableFuture-style stub that supports unary ca
 
 ```
 ManagedChannel channel = ManagedChannelBuilder.forTarget(target).usePlaintext().build();
-
 ```
 然后定义一个blockingStub
 
 ```
-
 blockingStub = GreeterGrpc.newBlockingStub(channel);
-
 ```
 
 在使用blockingStub时，这时候就用到了proto生成的另一个文件夹，在protobuf文件夹中生成的java文件夹，里面包含了在项目中.proto文件中定义的message数据，每一个message数据生成一个接口，一个实现类。
@@ -132,7 +126,6 @@ HelloReply reply = HelloReply.newBuilder().setMessage("Hello " + req.getName()).
 
 ```
 server = ServerBuilder.forPort(port).addService((BindableService)new  GreeterImpl()).build().start();
-
 ```
 
 ### 服务端双向流通信实现
@@ -141,7 +134,7 @@ server = ServerBuilder.forPort(port).addService((BindableService)new  GreeterImp
 服务端与普通通信差别不大，直接附代码
 
 ```
-public void start()throws IOException {
+public void start() throws IOException {
 
         int port =8081;
 
@@ -178,7 +171,7 @@ public void start()throws IOException {
 服务端ServiceImpl实现部分，流传输通过接收response参数，返回request参数来实现的。
 
 ```
-public class StreamServiceImplextends StreamServiceGrpc.StreamServiceImplBase {
+public class StreamServiceImpl extends StreamServiceGrpc.StreamServiceImplBase {
 
         private Loggerlog = LoggerFactory.getLogger(StreamServiceImpl.class);    
 
@@ -240,7 +233,7 @@ public class StreamServiceImplextends StreamServiceGrpc.StreamServiceImplBase {
 ```
 public void sendNetInfo(String info) {
 
-        StreamObserver responseStreamObserver =new StreamObserver() {
+        StreamObserver responseStreamObserver = new StreamObserver() {
 
                 private int cut =0;
 
