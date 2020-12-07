@@ -12,7 +12,37 @@ ASM库的目标是生成、转换和分析已编译的Java类，这些类以字�
 本文将对ASM进行深入学习。
 <!--more-->
 
-### Overview
+## 背景
+
+程序分析，生成和转换是有用的技术，可以在许多情况下使用:
+
+- 程序分析可以是简单的综合解析，也可以是完整的语义分析，可以用来发现应用程序中的潜在缺陷，检测未使用的代码，对代码进行反向工程，等等。
+
+- 程序生成在编译器中使用。这包括传统的编译器，也包括用于分布式编程的stub或框架编译器，即时编译器等等。
+
+- 程序转换可以用来优化或混淆程序，插入调试或性能监控代码到应用程序中，用于面向切面的编程，等等。
+
+所有这些技术都可以用于任何编程语言，但不同语言容易做到的程度不一样。对于Java，它们可以用于Java源代码或已编译的Java类。
+
+使用已编译类的一个优点是，不需要显示源代码。因此，程序转换可以用于任何应用程序，包括封闭源码和商业应用程序。
+
+处理已编译代码的另一个优点是，在将类加载到Java虚拟机之前，可以在运行时分析、生成或转换类(在运行时生成和编译源代码是可能的，但这确实很慢，并且需要一个完整的Java编译器)。这样做的好处是，像stub编译器或切面编织器等工具对用户来说是透明的。
+
+由于程序分析、生成和转换技术有许多可能的用途，许多用于分析、生成和转换程序的工具已经被实现，适用于多种语言，包括Java。
+
+ASM是Java语言的工具之一，是为运行时设计的，同时在类的生成和转换是离线的。ASM library因此被设计用于编译Java类。它还被设计得尽可能快和小。在运行时，为了动态地生成或转换类，使用ASM的应用程序不会放慢太多速度，尽可能快是很重要的。为了在内存受限的环境中使用，以及避免使用ASM使小型应用程序或库膨胀，尽可能小是很重要的。
+
+ASM不是生成和转换已编译Java类的唯一工具，但它是最新且高效的工具之一。可以从网页中[下载](http://asm.objectweb.org)。其主要优势如下:
+
+- 它有一个简单的、设计良好的、模块化的API，易于使用。
+- 它有很好的文档，并有一个相关联的Eclipse插件。
+- 它提供对最新Java版本Java 7的支持。
+- 它体积小，速度快，而且非常健壮。
+- 它的大型用户社区可以为新用户提供支持。
+- 它的开放源码许可允许您以几乎任何想要的方式使用它。
+
+
+## Overview
 
 ASM库提供两类API：
 1. the core API  ---  类基于事件的表示
@@ -24,7 +54,7 @@ ASM库提供两类API：
 
 -  然而，使用基于事件的API实现类转换可能更加困难，因为在任何给定时间类中只有一个元素可用(对应于当前事件的元素)，而整个类在内存中使用基于对象的API可用。
 
-**架构**
+### 架构
 
 实际上，基于事件的API是围绕事件生产者(类解析器)、事件消费者(类编写器)和各种预定义的事件过滤器组织的，用户定义的生产者、消费者和过滤器可以添加到这些过滤器中。使用这个API需要两个步骤:
 
@@ -33,13 +63,27 @@ ASM库提供两类API：
 
 基于对象的API还有一个架构方面:实际上可以组合操作对象树的类生成器或转换器组件，它们之间的链接表示转换的顺序。
 
+### 组织结构
 
-### Core API
+ASM库组织在几个包中，分布在几个jar文件:
+
+- org.objectweb.asm和org.objectweb.asm.signature定义基于事件的API，并提供类解析器和编写器组件。它们包含在asn.jar归档文件中。
+
+- org.objectweb.asm.util包，在asm-util.jar中提供了基于核心API的各种工具，这些工具可在ASM应用程序的开发和调试期间使用。
+
+- org.objectweb.asm.commons提供了几个有用的预定义类转换器，大部分基于核心API。它包含在asm-commons.jar文件中。
+
+- org.objectweb.asm.tree包，在asm-tree.jar归档中，定义了基于对象的API，并提供了在基于事件和基于对象的表示之间进行转换的工具。
+
+- org.objectweb.asm.tree.analysis包，提供了一个基于树API的类分析框架和几个预定义的类分析程序，在asm-analysis.jar中。
+
+
+## Core API
 
 本章解释了如何用core ASM API生成和转换已编译的Java类。
 
 
-#### 概述
+### 概述
 
 编译后的类包含:
 
@@ -62,17 +106,21 @@ ASM库提供两类API：
 在许多情况下，类型被限制为类或接口类型。例如，类的超类、类实现的接口或方法抛出的异常不能是基本类型或数组类型，而必须是类或接口类型。这些类型在具有内部名称的已编译类中表示。类的内部名称只是该类的完全限定名，其中点被替换为斜线。例如，字符串的内部名称是java/lang/String。
 
 
-**基本类型**的描述符是单个字符:Z是布尔型，C是char型，B是byte型，S是short型，I是int型，F是float型，J是long型，D是double型。类类型的描述符是这个类的内部名称，前面是L，后面是分号。例如，String的类型描述符是Ljava/lang/String;。最后，数组类型的描述符是一个方括号，后面跟着数组元素类型的描述符。
+#### 类型描述符
+
+Z是布尔型，C是char型，B是byte型，S是short型，I是int型，F是float型，J是long型，D是double型。类类型的描述符是这个类的内部名称，前面是L，后面是分号。例如，String的类型描述符是Ljava/lang/String;。最后，数组类型的描述符是一个方括号，后面跟着数组元素类型的描述符。
 
 ![wjzHat.png](https://s1.ax1x.com/2020/09/23/wjzHat.png)
 
-**方法描述符**是用一个字符串描述方法的参数类型和返回类型的类型描述符列表。方法描述符与左括号开始,其次是每个形式参数的类型描述符,紧随其后的是一个右括号,紧随其后的类型描述符返回类型,或者V如果方法返回void方法描述符(不包含方法的名称或参数名称)。
+#### 方法描述符
+
+是用一个字符串描述方法的参数类型和返回类型的类型描述符列表。方法描述符与左括号开始,其次是每个形式参数的类型描述符,紧随其后的是一个右括号,紧随其后的类型描述符返回类型,或者V如果方法返回void方法描述符(不包含方法的名称或参数名称)。
 
 ![wjzOG8.png](https://s1.ax1x.com/2020/09/23/wjzOG8.png)
 
 一旦了解了类型描述符的工作原理，理解方法描述符就很容易了。例如(I)I描述了一个方法，它接受一个int类型的参数并返回一个int。图2.3给出了几个方法描述符示例。
 
-### Interfaces and components
+### 接口和组件
 
 用于生成和转换已编译类的ASM API基于ClassVisitor抽象类。使用一个方法调用访问简单的部分，该方法调用的参数描述了它们的内容，并且返回void。内容可以是任意长度和复杂性的部分，通过返回一个辅助visitor类的初始方法调用进行访问。
 
@@ -89,16 +137,16 @@ ClassVisitor类的方法必须按照以下顺序调用，在这个类的Javadoc�
 
 这意味着必须首先调用visit，然后最多调用一个visitSource，然后最多调用一个visitOuterClass，然后对visitAnnotation和visitAttribute的任意数量的调用，然后是任意数量的调用，以任何顺序访问visitInnerClass、visitField和visitMethod，并通过访问visitEnd的单个调用终止。
 
-ASM提供了三个基于ClassVisitor API的核心组件来生成和转换类，分别是**ClassReader、ClassWriter、ClassVisitor**:
+ASM提供了三个基于ClassVisitor API的核心组件来生成和转换类，分别是**ClassReader、ClassWriter、ClassVisitor:**
 - ClassReader类解析以字节数组形式给出的已编译类，并对作为参数传递给它的accept方法的ClassVisitor实例调用相应的visitXxx方法。它可以被看作是一个事件生成器。
 - ClassWriter类是ClassVisitor抽象类的子类，该类直接以二进制形式构建已编译类。它产生一个包含编译类的字节数组作为输出，可以使用toByteArray方法检索。它可以被视为事件使用者。
 -  ClassVisitor类将它接收到的所有方法调用委托给另一个ClassVisitor实例。它可以被看作是一个事件过滤器。
 
 接下来的部分将通过具体示例展示如何使用这些组件来生成和转换类。
 
-#### 解析类
+### 解析类
 
-解析现有类所需的惟一组件是ClassReader组件。让我们举一个例子来说明这一点。假设我们希望以类似于javap工具的方式打印类的内容。第一步是编写ClassVisitor类的子类，它打印有关它访问的类的信息。例如：
+解析现有类所需的组件是ClassReader组件。让我们举一个例子来说明这一点。假设我们希望以类似于javap工具的方式打印类的内容。第一步是编写ClassVisitor类的子类，它打印有关它访问的类的信息。例如：
 ```
 public class ClassPrinter extends ClassVisitor {
 
@@ -160,9 +208,9 @@ java/lang/Runnable extends java/lang/Object {
 ```
 cl.getResourceAsStream(classname.replace(’.’, ’/’) + ".class");
 ```
-#### 生成类
+### 生成类
 
-生成类所需的唯一组件是ClassWriter组件。让我们举一个例子来说明这一点。考虑以下接口:
+生成类所需的组件是ClassWriter组件。让我们举一个例子来说明这一点。考虑以下接口:
 ```
 package pkg;
 
@@ -186,12 +234,14 @@ public interface Comparable extends Mesurable {
 ```
  第一行创建了一个ClassWriter实例，它将实际构建类的字节数组表示(构造器参数将在下一章中解释)。
 
-对visit方法的调用定义了类头部。V1_5参数是在ASM操作码接口中定义的常量，就像所有其他ASM常量一样。它指定了类版本，Java 1.5。ACC_XXX常量是对应于Java修饰符的标志。这里我们指定这个类是一个接口，并且它是公共的和抽象的(因为它不能被实例化)。下一个参数以内部形式指定类名。还记得吗，已编译的类不包含包或导入部分，因此所有类名必须是完全限定的。下一个论点是相关的
+对visit方法的调用定义了类头部。V1_5参数是在ASM操作码接口中定义的常量，就像所有其他ASM常量一样。它指定了类版本，Java 1.5。ACC_XXX常量是对应于Java修饰符的标志。这里我们指定这个类是一个接口，并且它是公共的和抽象的(因为它不能被实例化)。下一个参数以内部形式指定类名。还记得吗，已编译的类不包含包或导入部分，因此所有类名必须是完全限定的。
 
 接下来对visitField的三个调用类似，它们用于定义这三个接口字段。第一个参数是一组与Java修饰符对应的标志。这里我们指定字段为公共、final和静态。第二个参数是字段的名称，就像它在源代码中出现的那样。第三个参数是字段的类型，以类型描述符的形式。这里的字段是int字段，描述符是i。第四个参数对应于泛型。在我们的例子中，它是null，因为字段类型没有使用泛型。最后一个参数是字段的常数值:这个参数visitMethod调用用于定义compareTo方法。这里第一个参数也是一组与Java修饰符对应的标志。第二个参数是方法名，就像它在源代码中出现的那样。第三个参数是方法的描述符。第四个参数对应于泛型。在我们的例子中，它是null，因为方法没有使用泛型。最后一个参数是可以由方法抛出的异常数组，由异常的内部名称指定。这里是null，因为方法没有声明任何异常。visitMethod方法返回一个MethodVisitor。
+
+
 最后，使用对visitEnd的最后一个调用来通知cw类已经完成，并使用对toByteArray的调用来检索它作为字节数组。
 
-##### 使用生成的类
+#### 使用生成的类
 
 前面的字节数组可以存储在Comparable.class文件中以供将来使用。或者，也可以用类加载器动态加载它。一种方法是定义一个类加载器子类，它的defineClass方法是public的:
 ```
@@ -224,7 +274,7 @@ class StubClassLoader extends ClassLoader {
 ```
 实际上，使用生成的类的方式取决于上下文超出ASM API的范围。如果你在写一个编译器，类的抽象语法树将驱动生成过程要编译的程序，生成的类将存储在磁盘上。如果您正在编写将使用的动态代理类生成器或aspect weaver，以这样或那样的方式，一个类加载器。
 
-#### 转换类
+### 转换类
 
 到目前为止，ClassReader和ClassWriter组件是单独使用的。事件是“手工”生成并由ClassWriter直接使用的，或者，同样地，它们是由ClassReader生成并“手工”使用的，即由自定义ClassVisitor实现。当这些组件一起使用时，事情开始变得非常有趣。第一步是将ClassReader生成的事件定向到ClassWriter。其结果是类阅读器解析的类被类编写器重构:
 
@@ -272,7 +322,9 @@ public class ChangeVersionAdapter extends ClassVisitor {
 
 通过修改visit方法的其他参数，您可以实现不仅仅是更改类版本的其他转换。例如，您可以将接口添加到已实现接口列表中。也可以更改类的名称，但这需要的不仅仅是更改visit方法中的name参数。实际上，类的名称可以出现在编译后的类中的许多不同位置，而且必须更改所有这些出现的名称才能真正重命名类。
 
-##### 最优化
+
+
+#### 优化转换类
 
 
 前面的转换只改变了原始类中的四个字节。但是，通过上面的代码，b1被完全解析，相应的事件被用来从头构造b2，这不是很有效。复制b1中没有直接转换为b2的部分，而不解析这些部分，也不生成相应的事件，这样效率会高得多。ASM自动执行这种优化方法:
@@ -294,7 +346,7 @@ public class ChangeVersionAdapter extends ClassVisitor {
 由于这种优化，上面的代码比之前的代码快两倍，因为ChangeVersionAdapter不转换任何方法。对于转换部分或所有方法的普通类转换，其加速速度要小一些，但仍然是显而易见的:它确实是10到20%的量级。不幸的是，这种优化需要将原始类中定义的所有常量复制到转换后的类中。对于添加字段、方法或指令的转换来说，这不是问题，但是对于转换来说，与未优化的情况相比，这会导致更大的类文件。因此，只能对“加法”转换使用这种优化。
 
 
-#####  使用转换类
+####  使用转换类
 
 转换后的类b2可以存储在磁盘上，也可以用类加载器加载，如前一节所述。但是在类装入器内完成的类转换只能转换由这个类装入器装入的类。如果您想转换所有的类，那么您必须将您的转换放到一个ClassFileTransformer中，正如java.lang.instrument中定义的那样。
 
@@ -311,7 +363,7 @@ public class ChangeVersionAdapter extends ClassVisitor {
         });
     }
 ```
-#### 删除类成员
+### 删除类成员
 
 在前一节中用于转换类版本的方法可以应用于ClassVisitor类的其他方法。通过更改visitField中的access或name参数visitMethod方法，您可以更改修饰符或字段或方法的名称。此外，没有转发一个方法调用与modified  参数，您可以选择根本不转发此调用。结果是  相应的类元素被删除。
 
@@ -362,7 +414,7 @@ public class ChangeVersionAdapter extends ClassVisitor {
     }
 ```
 
-#### 添加类成员
+### 添加类成员
 您可以“转发”更多的调用，而不是转发比接收到的更少的调用，这将产生添加类元素的效果。新调用可以插入到原始方法调用之间的多个位置，前提是必须遵守调用各个visitXxx方法的顺序
 
 例如，如果您想向类添加一个字段，就必须在原始方法调用之间插入对visitField的新调用，并且必须将这个新调用放入类适配器的一个访问方法中。例如，您不能在visit方法中这样做，因为这可能导致调用visitField，然后调用visitSource、visitOuterClass、visitAnnotation或visitAttribute，这些都是无效的。出于同样的原因，不能将这个新调用放到visitSource、visitOuterClass、visitAnnotation或visitAttribute方法中。唯一可能的是visitInnerClass、visitField、visitMethod或visitEnd方法。
@@ -407,7 +459,7 @@ Note:实际上，唯一真正正确的解决方案是通过在visitEnd方法中�
 ```
 字段被添加到visitEnd方法中。visitField方法不是为了修改现有字段或删除字段而重写的，而是为了检测要添加的字段是否已经存在。注意 fv!=null 在fv.viditEnd()调用前进行判断，这是因为，正如我们在上一节中所看到的，类访问者可以在visitField中返回null。
 
-#### 转换链
+### 转换链
 
 到目前为止，我们已经看到了由类读取器、类适配器和类编写器组成的简单转换链。当然，也可以使用更复杂的链，将几个类适配器链接在一起。链接几个适配器允许您组合几个独立的类转换，以便执行复杂的转换。还要注意，变换链不一定是线性的。你可以编写一个ClassVisitor，它可以同时将所有接收到的方法调用转发给几个ClassVisitor:
 ```
@@ -430,13 +482,13 @@ Note:实际上，唯一真正正确的解决方案是通过在visitEnd方法中�
 
 对称地，几个类适配器可以委托给同一个类访问器(这需要一些预防措施来确保，例如，在这个类访问器上只调用了一次visit和visitEnd方法)。
 
-#### 工具
+### 工具
 
 除了ClassVisitor类和相关的ClassReader和ClassWriter组件之外，ASM还在org.objectweb.asm中提供。util包，这是几个在类生成器或适配器开发期间有用的工具，但在运行时不需要它们。ASM还提供了一个实用程序类，用于在运行时操作内部名称、类型描述符和方法描述符。下面介绍了所有这些工具。
 
 ![wzPKnU.png](https://s1.ax1x.com/2020/09/24/wzPKnU.png)
 
-##### 类型
+#### 类型
 
 正如您在前面几节中看到的，ASM API公开了存储在编译类中的Java类型，即作为内部名称或类型描述符。当它们在源代码中出现时，可以将它们公开，以使代码更具可读性。但是这需要在ClassReader和ClassWriter中的两种表示之间进行系统转换，这会降低性能。这就是ASM不透明地将内部名称和类型描述符转换为它们等效的源代码形式的原因。不过，它提供了类型类，以便在必要时手动完成该操作。
 
@@ -448,7 +500,7 @@ getDescriptor方法返回类型的描述符。因此，例如，在代码中可�
 
 类型对象也可以表示方法类型。这样的对象可以从方法描述符或方法对象构造。getDescriptor方法然后返回与此类型对应的方法描述符。另外，可以使用getArgumentTypes和getReturnType方法来获取方法的参数类型和返回类型对应的类型对象。例如Type.getArgumentTypes("(I)V")返回值包含单个元素的数组Type.INT_TYPE。 类似地，调用Type.getReturnType("(I)V")返回Type.VOID_TYPE对象。
 
-##### TraceClassVisitor
+#### TraceClassVisitor
 
 为了检查生成的或转换的类是否符合您的期望，ClassWriter返回的字节数组并不是真正有用的，因为它是不可读的。文本表示更容易使用。这就是TraceClassVisitor类所提供的内容。这个类，顾名思义，扩展了ClassVisitor类，并构建被访问类的文本表示。因此，您可以使用TraceClassVisitor，而不是使用ClassWriter来生成类，以获得实际生成内容的可读跟踪。或者，更好的是，你可以同时使用这两种方法。实际上，除了默认行为之外，TraceClassVisitor还可以将对其方法的所有调用委托给另一个访问者，例如ClassWriter:
 ```
@@ -477,7 +529,7 @@ getDescriptor方法返回类型的描述符。因此，例如，在代码中可�
 
  请注意，您可以在生成链或转换链的任何点上使用TraceClassVisitor，而不仅仅是在ClassWriter之前，以便查看在链的这个点上发生了什么,还请注意，通过String.equals()，这个适配器生成的类的文本表示可以方便地用于比较类。
  
-##### CheckClassAdapter
+#### CheckClassAdapter
 
 ClassWriter类不检查它的方法是否以适当的顺序和有效的参数被调用。因此，有可能生成将被Java虚拟机验证器拒绝的无效类。为了尽快检测其中一些错误，可以使用CheckClassAdapter类。与TraceClassVisitor类似，这个类扩展了ClassVisitor类，并将对其方法的所有调用委托给另一个ClassVisitor，例如TraceClassVisitor或ClassWriter。但是，这个类不是打印被访问类的文本表示，而是在委托给下一个访问器之前，检查它的方法是否按适当的顺序调用，并带有有效的参数。在出现错误时，抛出IllegalStateException或IllegalArgumentException。
 
@@ -500,7 +552,7 @@ ClassWriter类不检查它的方法是否以适当的顺序和有效的参数被
 ```
 与TraceClassVisitor类似，您可以在生成链或转换链的任何点(而不仅仅是在ClassWriter之前)使用CheckClassAdapter，以便在链的这个点上检查类。
 
-##### ASMifier
+#### ASMifier
 
 这个类为TraceClassVisitor工具提供了一个备用的后端（默认情况下，它使用textier后端，产生上面所示的那种输出）。这个后端使TraceClassVisitor类的每个方法打印用于调用它的Java代码。例如，调用visitEnd()方法输出cv.visitEnd();。其结果是，当具有ASMifier后端的TraceClassVisitor访问一个类时，它打印源代码来用ASM生成这个类。如果您使用此访问器访问已经存在的类，这将非常有用。例如，如果您不知道如何用ASM生成一些已编译的类，那么编写相应的源代码，用javac编译它，并用ASMifier访问已编译的类。您将得到ASM代码来生成这个编译类!
 
@@ -531,16 +583,18 @@ public class RunnableDump implements Opcodes {
 }
 ```
 
-#### Methods
+## Methods
 
-章解释了如何用核心ASM API生成和转换编译后的方法。首先介绍编译后的方法，然后介绍相应的ASM接口、组件和生成和转换ASM的工具，以及许多说明性示例。
+解释如何用核心ASM API生成和转换编译后的方法。
 
-##### Structure
+首先介绍编译后的方法，然后介绍相应的ASM接口、组件和生成和转换ASM的工具，以及许多说明性示例。
+
+### Structure
 
 在已编译的类中，方法的代码以字节码指令序列的形式存储。为了生成和转换类，了解这些指令并理解它们是如何工作的是非常重要的。本节概述了这些说明，这些说明对于开始编写简单的类生成器和转换器已经足够了。要获得完整的定义，您应该阅读Java虚拟机规范。
 
 
-##### 执行模型
+### 执行模型
 
 在展示字节码指令之前，有必要展示Java虚拟机执行模型。正如您所知道的，Java代码是在线程中执行的。每个线程都有自己的执行堆栈，它是由帧组成的。每一帧代表一个方法调用:每次调用一个方法时，一个新的帧被推入当前线程的执行堆栈。当方法返回时，通常或由于异常，该框架将从执行堆栈中弹出，并在调用方法中继续执行(其框架现在位于堆栈之上)。
 
@@ -556,7 +610,7 @@ public class RunnableDump implements Opcodes {
 
 局部变量和操作数堆栈部分中的每个槽都可以保存任何Java值，长值和双精度值除外。这些值需要两个槽。这使得局部变量的管理变得复杂:例如第i个方法参数不一定存储在局部变量i中。max(1L, 2L)创建一个帧，其1L值位于前两个局部变量插槽，2L值位于第三和第四插槽。
 
-##### 字节码指令
+### 字节码指令
 
 一个字节码指令是由一个操作码来识别这条指令，和一个固定数量的参数:
 
@@ -591,24 +645,6 @@ public class RunnableDump implements Opcodes {
 
 **Return** &nbsp; &nbsp; 最后，xRETURN和RETURN指令用于终止方法的执行，并将结果返回给调用者。RETURN用于返回void的方法，xRETURN用于其他方法。 
 
-##### Examples
+### Examples
 
 <b>未完待续
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 

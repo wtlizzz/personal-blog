@@ -117,7 +117,7 @@ darkmode: false
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home
-  archives: /archives/ || fa fa-archive
+  目录: /archives/ || fa fa-archive
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
   #schedule: /schedule/ || fa fa-calendar
@@ -676,10 +676,10 @@ google_analytics:
   only_pageview: false
 
 # Baidu Analytics
-baidu_analytics: # <app_id>
+baidu_analytics: 7f4b8b54f803186c40c333785b8aee31 # <app_id>
 
 # Growingio Analytics
-growingio_analytics: # <project_id>
+growingio_analytics:  # <project_id>
 
 # CNZZ count
 cnzz_siteid:
@@ -845,10 +845,10 @@ motion:
 # For more information: https://github.com/HubSpot/pace
 pace:
   enable: true
-  # Themes list:
+#  Themes list: bounce
   # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-  theme: mac-osx
+  theme: minimal
 
 # JavaScript 3D library.
 # Dependencies: https://github.com/theme-next/theme-next-three

@@ -311,7 +311,7 @@ int readBytes = sc.read(byteBuffer);
 socketChannel.write(buffer)；
 ```
 
-**Note:**如果发送区TCP缓冲区满，会导致写半包，此时，需要注册监听写操作为，循环写，直到整包消息写入TCP缓冲区。
+** Note: ** 如果发送区TCP缓冲区满，会导致写半包，此时，需要注册监听写操作为，循环写，直到整包消息写入TCP缓冲区。
 
 ##### NIO创建TimeServer源码
 
@@ -410,9 +410,4 @@ public class ReactorTask implements Runnable {
     }
 
 }
-```
-
-
-
-```
 ```

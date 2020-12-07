@@ -683,7 +683,7 @@ Java NIO SocketChannel是连接到TCP网络套接字的通道。它是Java NIO�
 SocketChannel socketChannel = SocketChannel.open();
 socketChannel.connect(new InetSocketAddress("http://jenkov.com", 80));
 ```
-在使用后，通过调用SocketChannel.close()方法关闭SocketChannel。以下是如何做到的:
+在使用后，通过调用SocketChannel.close()方法关闭SocketChannel。
 ```
 socketChannel.close();    
 ```
