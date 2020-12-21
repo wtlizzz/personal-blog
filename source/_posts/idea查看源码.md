@@ -34,7 +34,7 @@ Decompiled .class file,bytecode version: 52.0(Java 8)
 
 添加完成之后就能够显示源代码，.class文件也变成.java文件：
 
-[![B1pNWR.png](https://s1.ax1x.com/2020/10/28/B1pNWR.png)](https://imgchr.com/i/B1pNWR)
+![B1pNWR.png](https://s1.ax1x.com/2020/10/28/B1pNWR.png)
 
 
 
@@ -67,21 +67,3 @@ OpenJDK不包含其他的软件包，比如Rhino Java DB JAXP……，并且可�
 #### 不能使用Java商标
 
 这个很容易理解，在安装openjdk的机器上，输入“java -version”显示的是openjdk，但是如果是使用Icedtea补丁的openjdk，显示的是java。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

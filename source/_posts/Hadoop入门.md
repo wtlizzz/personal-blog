@@ -622,8 +622,8 @@ Hadoop Map/Reduce框架为应用程序的写入文件操作提供压缩工具，
 
 在idea中点击Hadoop方法，会发现无法查看源码，如下图：
 
-[![DA9HGq.png](https://s3.ax1x.com/2020/11/16/DA9HGq.png)](https://imgchr.com/i/DA9HGq)
+![DA9HGq.png](https://s3.ax1x.com/2020/11/16/DA9HGq.png)
 
 下载Hadoop的Binary download格式文件，下载后的文件中的例如：hadoop-2.10.1/share/hadoop/xxx/sources中有对应的源码。我这里查看的是common包中的源码，直接点击choose Sources选中hadoop-2.10.1/share/hadoop/common/sources中源码文件即可。
 
-[![DA97in.png](https://s3.ax1x.com/2020/11/16/DA97in.png)](https://imgchr.com/i/DA97in)
+![DA97in.png](https://s3.ax1x.com/2020/11/16/DA97in.png)

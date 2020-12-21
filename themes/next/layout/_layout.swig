@@ -37,6 +37,7 @@
           {% block sidebar %}{% endblock %}
         {%- endif %}
       </div>
+      {% include '_macro/cat.swig' %}
     </main>
 
     <footer class="footer">

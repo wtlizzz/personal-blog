@@ -995,6 +995,5 @@ vendors:
 css: css
 js: js
 images: images
-
 # Fireworks
-fireworks: true
+fireworks: false

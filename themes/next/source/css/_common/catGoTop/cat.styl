@@ -1,0 +1,49 @@
+/*加一只上吊的小猫咪~*/
+.cd-top{
+  position: fixed;
+  right: 25px;
+  top: -900px;
+  z-index: 99;
+  width: 100px;
+  height: 600px;
+  background: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/scroll.png) no-repeat center;
+  background-size: contain;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  cursor: url('/images/cursor.ico'),pointer;
+  opacity: 1;
+}
+.cd-top.cd-is-visible {
+  opacity: 1;
+  top: -226px;
+}
+.faa-float.animated, .faa-float.animated-hover:hover, .faa-parent.animated-hover:hover>.faa-float {
+  -webkit-animation: float 2s linear infinite;
+  animation: float 2s linear infinite;
+}
+.faa-float.animated, .faa-float.animated-hover:hover, .faa-parent.animated-hover:hover>.faa-float {
+  -webkit-animation: float 2s linear infinite;
+  animation: float 2s linear infinite;
+}
+.cat-to-top {
+  opacity: $b2t-opacity;
+  padding: 0 6px;
+  //position: fixed;
+  //transition-property: bottom;
+
+  //if (hexo-config('back2top.scrollpercent')) {
+  //  width: initial;
+  //} else {
+  //  width: 24px;
+  //
+  //  span {
+  //    display: none;
+  //  }
+  //}
+
+  +tablet-mobile() {
+    left: $b2t-position-right-mobile;
+    opacity: $b2t-opacity-hover;
+  }
+}
+
