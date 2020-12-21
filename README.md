@@ -1,18 +1,18 @@
 # wtlizzz
 
 地址
-###https://www.wtlizzz.com
+### https://www.wtlizzz.com
 github地址：origin  personalweb
 github deploy地址： blog
 
-###new 新建一篇文章
+### new 新建一篇文章
 
     ```$ hexo new [layout] <title>```
     
     ```如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。```
 
 
-###generate 生成静态文件
+### generate 生成静态文件
 
 ```$ hexo generate```
 
@@ -25,13 +25,13 @@ github deploy地址： blog
    -c, --concurrency	最大同时生成文件的数量，默认无限制
 ```   
    
-###publish
+### publish
    
    ```
    $ hexo publish [layout] <filename>
    发表草稿。
    ```
-###server   启动服务器
+### server   启动服务器
 ```angular2
 $ hexo server
 默认情况下，访问网址为： http://localhost:4000/
@@ -40,12 +40,12 @@ $ hexo server
 -l, --log	启动日记记录，使用覆盖记录格式
 ```
  
-###deploy  部署网站
+### deploy  部署网站
 ```angular2
 $ hexo deploy
 ```
    
-###clean    清除缓存文件
+### clean    清除缓存文件
 ```
 $ hexo clean
 在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。
