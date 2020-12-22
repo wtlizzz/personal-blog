@@ -164,7 +164,8 @@ NexT.utils = {
       });
     });
   },
-  registerCatScrollPercent: function ($) {
+
+  registerCatScrollPercent: function () {
     var THRESHOLD = 150;
     var backToTop = document.querySelector('.cat-to-top');
     // For init back to top in sidebar if page was scrolled after page refresh.
@@ -179,21 +180,26 @@ NexT.utils = {
         }
       }
     });
-
-
+    //网页失去焦点时，title和icon变化
     document.addEventListener('visibilitychange', function () {
       if (document.visibilityState == 'hidden') {
         normal_title = document.title;
         document.title = '(/≧▽≦/)咦！你在哪呢';
 
-        favicon = $('head').find('link[rel$="icon"]');
-
-        console.warn(favicon)
+        normal_favicon = $('head').find('link[rel$="icon"]')[0].href;
+        // normal_favicon = $('head').find('link[rel$="icon"]')[1].href;
+        // normal_favicon = $('head').find('link[rel$="icon"]')[2].href;
+        $('head').find('link[rel$="icon"]')[0].href = "/images/9.png";
+        $('head').find('link[rel$="icon"]')[1].href = "/images/9.png";
+        $('head').find('link[rel$="icon"]')[2].href = "/images/9.png";
       } else {
+        $('head').find('link[rel$="icon"]')[0].href = normal_favicon;
+        $('head').find('link[rel$="icon"]')[1].href = normal_favicon;
+        $('head').find('link[rel$="icon"]')[2].href = normal_favicon;
         document.title = normal_title;
       }
     });
-
+    //点击上吊小猫咪，回到顶部
     backToTop && backToTop.addEventListener('click', () => {
       window.anime({
         targets: document.scrollingElement,
@@ -202,6 +208,12 @@ NexT.utils = {
         scrollTop: 0
       });
     });
+
+    window.onload = function () {
+      console.warn('Loaded')
+      document.getElementById('live2d-widget').style["pointer-events"] = "auto";
+      document.getElementById('live2d-widget').classList.add("cursorC");
+    }
   },
 
   /**
