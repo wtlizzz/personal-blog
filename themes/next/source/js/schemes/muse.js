@@ -9,25 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var sidebarToggleLines = {
     lines: document.querySelector('.sidebar-toggle'),
-    init : function() {
+    init: function () {
       this.lines.classList.remove('toggle-arrow', 'toggle-close');
     },
-    arrow: function() {
+    arrow: function () {
       this.lines.classList.remove('toggle-close');
       this.lines.classList.add('toggle-arrow');
     },
-    close: function() {
+    close: function () {
       this.lines.classList.remove('toggle-arrow');
       this.lines.classList.add('toggle-close');
     }
   };
 
   var sidebarToggleMotion = {
-    sidebarEl       : document.querySelector('.sidebar'),
+    sidebarEl: document.querySelector('.sidebar'),
     isSidebarVisible: false,
-    init            : function() {
+    init: function () {
       sidebarToggleLines.init();
-
       window.addEventListener('mousedown', this.mousedownHandler.bind(this));
       window.addEventListener('mouseup', this.mouseupHandler.bind(this));
       document.querySelector('#sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));
@@ -36,12 +35,22 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.sidebar-toggle').addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
       window.addEventListener('sidebar:show', this.showSidebar.bind(this));
       window.addEventListener('sidebar:hide', this.hideSidebar.bind(this));
+      $(document).keyup(function (e) {
+        if (e.key === "Escape") { // escape key maps to keycode `27`
+          if (sidebarToggleMotion.isSidebarVisible) {
+            window.dispatchEvent(new Event('sidebar:hide'));
+          } else {
+            window.dispatchEvent(new Event('sidebar:show'));
+          }
+        }
+      });
     },
-    mousedownHandler: function(event) {
+
+    mousedownHandler: function (event) {
       mousePos.X = event.pageX;
       mousePos.Y = event.pageY;
     },
-    mouseupHandler: function(event) {
+    mouseupHandler: function (event) {
       var deltaX = event.pageX - mousePos.X;
       var deltaY = event.pageY - mousePos.Y;
       var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && event.target.matches('.main');
@@ -49,56 +58,58 @@ document.addEventListener('DOMContentLoaded', () => {
         this.hideSidebar();
       }
     },
-    clickHandler: function() {
+    clickHandler: function () {
       this.isSidebarVisible ? this.hideSidebar() : this.showSidebar();
     },
-    mouseEnterHandler: function() {
+    mouseEnterHandler: function () {
       if (!this.isSidebarVisible) {
         sidebarToggleLines.arrow();
       }
     },
-    mouseLeaveHandler: function() {
+    mouseLeaveHandler: function () {
       if (!this.isSidebarVisible) {
         sidebarToggleLines.init();
       }
     },
-    showSidebar: function() {
+    showSidebar: function () {
       this.isSidebarVisible = true;
       this.sidebarEl.classList.add('sidebar-active');
       if (typeof Velocity === 'function') {
         Velocity(document.querySelectorAll('.sidebar .motion-element'), isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
           stagger: 50,
-          drag   : true
+          drag: true
         });
       }
 
       sidebarToggleLines.close();
       NexT.utils.isDesktop() && window.anime(Object.assign({
-        targets : document.body,
+        targets: document.body,
         duration: SIDEBAR_DISPLAY_DURATION,
-        easing  : 'linear'
+        easing: 'linear'
       }, isRight ? {
         'padding-right': SIDEBAR_WIDTH
       } : {
         'padding-left': SIDEBAR_WIDTH
       }));
     },
-    hideSidebar: function() {
+    hideSidebar: function () {
       this.isSidebarVisible = false;
       this.sidebarEl.classList.remove('sidebar-active');
 
       sidebarToggleLines.init();
       NexT.utils.isDesktop() && window.anime(Object.assign({
-        targets : document.body,
+        targets: document.body,
         duration: SIDEBAR_DISPLAY_DURATION,
-        easing  : 'linear'
+        easing: 'linear'
       }, isRight ? {
         'padding-right': 0
       } : {
         'padding-left': 0
       }));
-    }
+    },
+
   };
+
   sidebarToggleMotion.init();
 
   function updateFooterPosition() {
@@ -110,4 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateFooterPosition();
   window.addEventListener('resize', updateFooterPosition);
   window.addEventListener('scroll', updateFooterPosition);
+
+
 });

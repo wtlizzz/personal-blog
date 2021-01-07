@@ -189,9 +189,9 @@ NexT.utils = {
         normal_favicon = $('head').find('link[rel$="icon"]')[0].href;
         // normal_favicon = $('head').find('link[rel$="icon"]')[1].href;
         // normal_favicon = $('head').find('link[rel$="icon"]')[2].href;
-        $('head').find('link[rel$="icon"]')[0].href = "/images/9.png";
-        $('head').find('link[rel$="icon"]')[1].href = "/images/9.png";
-        $('head').find('link[rel$="icon"]')[2].href = "/images/9.png";
+        $('head').find('link[rel$="icon"]')[0].href = "/images/15.png";
+        $('head').find('link[rel$="icon"]')[1].href = "/images/15.png";
+        $('head').find('link[rel$="icon"]')[2].href = "/images/15.png";
       } else {
         $('head').find('link[rel$="icon"]')[0].href = normal_favicon;
         $('head').find('link[rel$="icon"]')[1].href = normal_favicon;
@@ -210,10 +210,9 @@ NexT.utils = {
     });
 
     window.onload = function () {
-      console.warn('Loaded')
       document.getElementById('live2d-widget').style["pointer-events"] = "auto";
       document.getElementById('live2d-widget').classList.add("cursorC");
-    }
+    };
   },
 
   /**

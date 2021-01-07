@@ -81,10 +81,6 @@ public class WebSocketServer {
 因为使用的ServerSocketChannel，会为每个传入连接创建SocketChannel。所以在selectionKey.isAcceptable()状态，将每个传入的请求SocketChannel添加到selector，绑定OP_READ状态。  
 即在处理selectionKey.isAcceptable()状态时，都是传入的新链接。在处理selectionKey.isReadable()状态时，都是websocket传输的数据。
 
-
-
-
-
 创建handleReadable方法，处理请求
 
 ```

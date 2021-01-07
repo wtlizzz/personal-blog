@@ -1,7 +1,8 @@
 title: AWS配置SS
 author: Wtli
-date: 2020-12-10 10:49:16
-tags:
+tags: []
+categories: []
+date: 2020-12-10 10:49:00
 ---
 AWS搞活动，12个月免费，正好用来学习。
 
