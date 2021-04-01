@@ -23,3 +23,67 @@
 .brand {
   background: var(--btn-default-bg);
 }
+
+
+
+
+.profile-color-modes {
+  display: none;
+  position: relative;
+  padding-right: 32px;
+}
+
+.profile-color-modes-illu-group {
+  stroke: var(--color-auto-gray-3);
+}
+.profile-color-modes-illu-red {
+  animation-delay: .4s;
+  animation-duration: .1s;
+}
+.profile-color-modes-illu-orange {
+  animation-delay: .5s;
+  animation-duration: .1s;
+}
+.profile-color-modes-illu-purple {
+  animation-delay: .6s;
+  animation-duration: .1s;
+}
+.profile-color-modes-illu-green {
+  animation-delay: .8s;
+  animation-duration: .2s;
+  animation-timing-function: cubic-bezier(.47,2.92,.84,-1.5);
+}
+.profile-color-modes-illu-blue {
+  animation-delay: .7s;
+  animation-duration: .1s;
+}
+.profile-color-modes-illu-frame {
+  animation: profile-color-modes-illu-anim-frame-show 0s forwards,profile-color-modes-illu-anim-frame-hide 0s forwards;
+}
+.profile-color-modes-illu-frame:first-child {
+  animation-delay: 1.8s;
+}
+.profile-color-modes-illu-frame:nth-child(2) {
+  animation-delay: 1.8s,2.58s;
+}
+.profile-color-modes-illu-frame:nth-child(3) {
+  animation-delay: 2.58s,2.66s;
+}
+.profile-color-modes-illu-frame:nth-child(4) {
+  animation-delay: 2.66s,2.78s;
+}
+.profile-color-modes-illu-frame:nth-child(5) {
+  animation-delay: 2.78s,2.84s;
+}
+.profile-color-modes-illu-frame:nth-child(6) {
+  animation-delay: 2.84s,3.44s;
+}
+.profile-color-modes-illu-frame:nth-child(7) {
+  animation-delay: 3.44s,3.56s;
+}
+.profile-color-modes-illu-frame:nth-child(8) {
+  animation-delay: 3.56s;
+}
+.profile-color-modes-illu-frame:nth-child(9), .profile-color-modes-illu-frame:nth-child(10) {
+  animation: none;
+}

@@ -50,8 +50,7 @@ service Greeter{//服务端接口方法
 
 使用maven compile   编译之后会在target/generated-sources文件夹中增加protobuf文件夹。编译完之后目录如下：
 
-![aUIkzd.png](https://s1.ax1x.com/2020/08/03/aUIkzd.png)
-
+![upload successful](/images/pasted-29.png)
 
 生成了在proto文件中service参数对应的Grpc类，在类中自动创建了newstub、newBlockingStub、newFutureStub三个方法。分别对应的是：
 ```
@@ -316,4 +315,4 @@ public static void main(String[] args)throws Exception {
 }
 ```
 最后附上运行图
-![aUIEQA.png](https://s1.ax1x.com/2020/08/03/aUIEQA.png)
+![upload successful](/images/pasted-30.png)

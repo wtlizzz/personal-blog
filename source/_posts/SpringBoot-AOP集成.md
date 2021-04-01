@@ -147,4 +147,5 @@ public @interface  Log {
 ```
 
 ### 运行结果
-![aWAOX9.png](https://s1.ax1x.com/2020/08/07/aWAOX9.png)
+
+![upload successful](/images/pasted-34.png)

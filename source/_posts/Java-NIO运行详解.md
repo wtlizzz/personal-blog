@@ -55,13 +55,14 @@ public class WebSocketServer {
 运行过程
 
 1. 创建了ServerSocketChannel，绑定8888端口。
-![BQEnxA.png](https://s1.ax1x.com/2020/10/27/BQEnxA.png)
+![upload successful](/images/pasted-51.png)
+
 
 2. 打开Selector，没有将ServerSocketChannel注册到Selector。
-![BQE3a8.png](https://s1.ax1x.com/2020/10/27/BQE3a8.png)
+![upload successful](/images/pasted-52.png)
 
 3. 在Selector中注册ServerSocketChannel。
-![BQEcRJ.png](https://s1.ax1x.com/2020/10/27/BQEcRJ.png)
+![upload successful](/images/pasted-53.png)
 
 4. 此时的selector.select()并没有数据，进入到等待部分，当请求进入时激活selector.select()方法。
 
@@ -167,7 +168,7 @@ public class WSProtocol {
 
 #### Header加密
 
-![BtBdtH.png](https://s1.ax1x.com/2020/10/30/BtBdtH.png)
+![upload successful](/images/pasted-54.png)
 
 ```
     static String getHandShakeResponse(String receiveKey) {
@@ -238,18 +239,15 @@ return bytes;
 ### WebSocket包解析
 
 对WebSocket进行抓包查看，
-
-![Dml0pR.png](https://s3.ax1x.com/2020/11/18/Dml0pR.png)
+![upload successful](/images/pasted-55.png)
 
 建立一个WebSocket连接，首先会通过TCP请求，来进行握手，然后发送HTTP请求建立连接，再使用WebSocket Protocol来进行数据的传输。通过TCP连接来进行心跳保活（大约几秒一次，会发送TCP请求）。
 
 报文包解析：
-
-![DmJLSH.png](https://s3.ax1x.com/2020/11/18/DmJLSH.png)
+![upload successful](/images/pasted-56.png)
 
 WebSocket前几位分别是：Fin、Reserved、Opcode、Mask、Payload length。之后是Masking-key、Masked payload，下面的Payload就是这次请求携带的Data。
-
-![DmYSTf.png](https://s3.ax1x.com/2020/11/18/DmYSTf.png)
+![upload successful](/images/pasted-57.png)
 
 **附：**  
 **FIN：**标识是否为此消息的最后一个数据包，占 1 bit  
@@ -284,11 +282,11 @@ WebSocket前几位分别是：Fin、Reserved、Opcode、Mask、Payload length。
 **position=0   position是写入的位置  
  limit=capacity=1024  分别是数据最大的位置和容器最大的位置**
 
-![BGUcWT.png](https://s1.ax1x.com/2020/10/29/BGUcWT.png)
+![upload successful](/images/pasted-58.png)
 
 **如果在此时调用flip()再写入就会BufferOverflowException报错**
 
-![BGU7Y6.png](https://s1.ax1x.com/2020/10/29/BGU7Y6.png)
+![upload successful](/images/pasted-59.png)
 
 看着源码，在解释一遍buffer的属性：
 ```

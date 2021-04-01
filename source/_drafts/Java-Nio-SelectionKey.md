@@ -46,7 +46,7 @@ SelectionKeyImpl继承类SelectionKey，用来绑定channel和selector对象。
 
 有点复杂，简单画一下流程图来直观的看一下。
 
-![sAoDXj.png](https://s3.ax1x.com/2021/01/06/sAoDXj.png)
+![upload successful](/images/pasted-63.png)
 
 下面来看一下从刚开始创建Channel到Selector.select()怎么个过程：
 
@@ -61,7 +61,7 @@ serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
 好，重点就是serverSocketChannel.register方法，将channel绑定到selector中，下面是ServerSocketChannel的继承关系：
 
-![sATfat.png](https://s3.ax1x.com/2021/01/06/sATfat.png)
+![upload successful](/images/pasted-61.png)
 
 好第一个重点类：
 
@@ -185,47 +185,5 @@ AbstractSelectableChannel  SelectionKey\[] keys
 |SelectorImpl	|Set\<SelectionKey> publicSelectedKeys	||add(key)|
 
 第一次注册创建的channel是@797，连接建立使用的channel也是@797，使用的是一条通道。
-![sZIvan.png](https://s3.ax1x.com/2021/01/07/sZIvan.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![upload successful](/images/pasted-62.png)

@@ -27,7 +27,8 @@ Idea中maven的功能大部分就这几个：
 ```
 $ maven clean ：清除以前编译的代码，删除target目录和相关内容删除
 ```
-![dfzTKO.png](https://s1.ax1x.com/2020/08/27/dfzTKO.png)
+![upload successful](/images/pasted-31.png)
+
 ```
 $ maven validate 
 ```
@@ -49,11 +50,13 @@ $ maven install ：把编译好的class文件和下载的jar都打成一个完�
 ```
 $ maven site : 生成项目报告，站点，发布站点。
 ```
-[![dfz7rD.png](https://s1.ax1x.com/2020/08/27/dfz7rD.png)](https://imgchr.com/i/dfz7rD)
+![upload successful](/images/pasted-32.png)
+
 ```
 $ maven deploy 
 ```
-[![dfzqVH.png](https://s1.ax1x.com/2020/08/27/dfzqVH.png)](https://imgchr.com/i/dfzqVH)
+![upload successful](/images/pasted-33.png)
+
 
 ### IDEA maven compile太慢
 添加Ali镜像解决，IDEA maven compile太慢

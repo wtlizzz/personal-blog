@@ -1,6 +1,7 @@
 title: gRPC入门
 categories:
-  - 通信
+  - 网络
+  - ''
 tags:
   - gRPC
 date: 2020-08-02 18:03:00
@@ -18,7 +19,8 @@ date: 2020-08-02 18:03:00
 
 有关[gRPC官方介绍](https://www.grpc.io/docs/what-is-grpc/introduction/)：
 
-![aU5a2d.png](https://s1.ax1x.com/2020/08/03/aU5a2d.png)
+![upload successful](/images/pasted-28.png)
+
 gRPC是一个能在不同语言不同平台中进行高效通信的服务。gRPC默认使用Protocol Buffers数据格式：
 
 ``` bash

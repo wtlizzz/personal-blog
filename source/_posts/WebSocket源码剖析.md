@@ -41,7 +41,7 @@ First, the examination will locate any Java classes that are annotated with the 
 2. 这种交互又被称为WebSocket的握手（*This interaction is called the WebSocket opening handshake*.）。
 3. 当建立连接完成，WebSocket会为每一个Client创建对应的Endpoint实例（*The WebSocket implementation will create a new instance of the endpoint,that will be dedicated to interacting with that single client to which it is now connected*.）。
 
-![wJZ4N6.png](https://s1.ax1x.com/2020/09/10/wJZ4N6.png)
+![upload successful](/images/pasted-47.png)
 
 **特点**
 
@@ -67,6 +67,6 @@ The WebSocket protocol defines a messaging protocol on top of TCP with minimal f
 ```
 在TCP连接上向后和向前发送的不同WebSocket协议框架定义了WebSocket的生命周期事件，比如打开和关闭连接，同时也定义了应用程序创建的文本和二进制消息如何在连接上传输。
 
-![wJKSds.png](https://s1.ax1x.com/2020/09/10/wJKSds.png)
+![upload successful](/images/pasted-48.png)
 
  在图中，我们可以看到，我们在服务器上部署了一个逻辑端点，它有两个instance，由两个Endpoint表示，每个Endpoint处理来自两个独立客户机的消息。

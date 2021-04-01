@@ -101,7 +101,7 @@ ASM库组织在几个包中，分布在几个jar文件:
 
 另一个非常重要的结构差异是，编译后的类包含常量池部分。此池是一个数组，包含类中出现的所有数字、字符串和类型常量。这些常量只定义了一次，在常量池部分中，并由它们在类文件的所有其他部分中的索引引用。 ASM隐藏了与常量池相关的所有细节，因此您不必为此烦恼。下图总结了一个已编译类的总体结构。Java虚拟机规范第4节描述了确切的结构。
 
-![wjzAud.png](https://s1.ax1x.com/2020/09/23/wjzAud.png)
+![upload successful](/images/pasted-19.png)
 
 在许多情况下，类型被限制为类或接口类型。例如，类的超类、类实现的接口或方法抛出的异常不能是基本类型或数组类型，而必须是类或接口类型。这些类型在具有内部名称的已编译类中表示。类的内部名称只是该类的完全限定名，其中点被替换为斜线。例如，字符串的内部名称是java/lang/String。
 
@@ -110,13 +110,13 @@ ASM库组织在几个包中，分布在几个jar文件:
 
 Z是布尔型，C是char型，B是byte型，S是short型，I是int型，F是float型，J是long型，D是double型。类类型的描述符是这个类的内部名称，前面是L，后面是分号。例如，String的类型描述符是Ljava/lang/String;。最后，数组类型的描述符是一个方括号，后面跟着数组元素类型的描述符。
 
-![wjzHat.png](https://s1.ax1x.com/2020/09/23/wjzHat.png)
+![upload successful](/images/pasted-20.png)
 
 #### 方法描述符
 
 是用一个字符串描述方法的参数类型和返回类型的类型描述符列表。方法描述符与左括号开始,其次是每个形式参数的类型描述符,紧随其后的是一个右括号,紧随其后的类型描述符返回类型,或者V如果方法返回void方法描述符(不包含方法的名称或参数名称)。
 
-![wjzOG8.png](https://s1.ax1x.com/2020/09/23/wjzOG8.png)
+![upload successful](/images/pasted-21.png)
 
 一旦了解了类型描述符的工作原理，理解方法描述符就很容易了。例如(I)I描述了一个方法，它接受一个int类型的参数并返回一个int。图2.3给出了几个方法描述符示例。
 
@@ -126,14 +126,15 @@ Z是布尔型，C是char型，B是byte型，S是short型，I是int型，F是floa
 
  visitAnnotation、visitField和visitMethod方法就是这样，它们分别返回一个AnnotationVisitor、一个FieldVisitor和一个MethodVisitor。
 
-![wvpl0s.png](https://s1.ax1x.com/2020/09/23/wvpl0s.png)
+![upload successful](/images/pasted-22.png)
 
 返回一个辅助的AnnotationVisitor，如在ClassVisitor中。这些辅助访问器的创建和使用将在下一章进行解释:实际上，本章仅限于可以单独使用ClassVisitor类解决的简单问题。
-![wvpUcF.png](https://s1.ax1x.com/2020/09/23/wvpUcF.png)
+
+![upload successful](/images/pasted-23.png)
 
 ClassVisitor类的方法必须按照以下顺序调用，在这个类的Javadoc中指定:
 
-![wvpg1O.png](https://s1.ax1x.com/2020/09/23/wvpg1O.png)
+![upload successful](/images/pasted-24.png)
 
 这意味着必须首先调用visit，然后最多调用一个visitSource，然后最多调用一个visitOuterClass，然后对visitAnnotation和visitAttribute的任意数量的调用，然后是任意数量的调用，以任何顺序访问visitInnerClass、visitField和visitMethod，并通过访问visitEnd的单个调用终止。
 
@@ -295,7 +296,8 @@ class StubClassLoader extends ClassLoader {
         byte[] b2 = cw.toByteArray(); // b2 represents the same class as b1
 ```
 下图描述了与上述代码相对应的架构，其中组件用正方形表示，事件用箭头表示(在序列图中使用垂直时间线)。
-![wzpbjO.png](https://s1.ax1x.com/2020/09/24/wzpbjO.png)
+
+![upload successful](/images/pasted-25.png)
 
 但是，结果不会改变，因为ClassVisitor事件过滤器不会过滤任何东西。但是现在，通过覆盖一些方法，过滤一些事件以便能够转换类就足够了。例如，考虑下面的ClassVisitor子类:
 
@@ -318,7 +320,7 @@ public class ChangeVersionAdapter extends ClassVisitor {
 
 这个类只覆盖ClassVisitor类的一个方法。因此，除了对visit方法的调用外，所有的调用都被不加更改地转发给传递给构造函数的类访问器cv。其序列图如图2.7所示。
 
-![wz9FKS.png](https://s1.ax1x.com/2020/09/24/wz9FKS.png)
+![upload successful](/images/pasted-26.png)
 
 通过修改visit方法的其他参数，您可以实现不仅仅是更改类版本的其他转换。例如，您可以将接口添加到已实现接口列表中。也可以更改类的名称，但这需要的不仅仅是更改visit方法中的name参数。实际上，类的名称可以出现在编译后的类中的许多不同位置，而且必须更改所有这些出现的名称才能真正重命名类。
 
@@ -486,7 +488,7 @@ Note:实际上，唯一真正正确的解决方案是通过在visitEnd方法中�
 
 除了ClassVisitor类和相关的ClassReader和ClassWriter组件之外，ASM还在org.objectweb.asm中提供。util包，这是几个在类生成器或适配器开发期间有用的工具，但在运行时不需要它们。ASM还提供了一个实用程序类，用于在运行时操作内部名称、类型描述符和方法描述符。下面介绍了所有这些工具。
 
-![wzPKnU.png](https://s1.ax1x.com/2020/09/24/wzPKnU.png)
+![upload successful](/images/pasted-27.png)
 
 #### 类型
 

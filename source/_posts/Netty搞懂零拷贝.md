@@ -13,8 +13,7 @@ date: 2020-12-09 11:00:00
 𝕵~~大橘护体,文章必过~~𝕵
 </center>
 
-<img style="margin: auto;" src="https://s3.ax1x.com/2020/12/09/rCiZ5D.png" width="300" height="300" />
-
+<img style="margin: auto;" src="/images/pasted-4.png" width="300" height="300" />
 
 Netty的“零拷贝”主要体现在如下三个方面：
 
@@ -102,7 +101,7 @@ ByteBuffer是一个抽象类abstract。
 
 下面看第二种“零拷贝”的实现CompositeByteBuf，它对外将多个ByteBuf封装成一个ByteBuf，对外提供统一封装后的ByteBuf接口。
 
-![rCi8Vf.png](https://s3.ax1x.com/2020/12/09/rCi8Vf.png)
+![upload successful](/images/pasted-5.png)
 
 实际上是一个ByteBuf的装饰器，将多个ByteBuf组成一个集合components，然后对外提供统一的接口。
 

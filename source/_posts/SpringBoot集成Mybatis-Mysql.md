@@ -419,7 +419,7 @@ mybatis:
 $ http://localhost:8080/druid/index.html
 ```
 
-![dhKQgS.png](https://s1.ax1x.com/2020/08/27/dhKQgS.png)
+![upload successful](/images/pasted-42.png)
 
 
 #### 自定义sql

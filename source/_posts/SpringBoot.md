@@ -34,7 +34,8 @@ date: 2020-09-08 13:50:00
 ```
 **与Http通信比较**  
 它的最大特点就是，服务器可以主动向客户端推送信息，客户端也可以主动向服务器发送信息，是真正的双向平等对话，属于服务器推送技术的一种。
-![wMofsO.png](https://s1.ax1x.com/2020/09/08/wMofsO.png)
+
+![upload successful](/images/pasted-45.png)
 
 ### SpringBoot服务端集成
 
@@ -108,7 +109,7 @@ public class WebSocket {
 ### SpringBoot使用WebSocket
 
 SpringBoot创建Socket控制类，每次请求都是创建了一个控制类实例。
-![wQiFL4.png](https://s1.ax1x.com/2020/09/08/wQiFL4.png)
+![upload successful](/images/pasted-46.png)
 为了能够保存每次请求对话，在类中需要创建一个static CopyOnWriteArraySet用来保存所有的客户端对应实例对象，每个对象都有保存对应客户端的session对话。
 ```
 //concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。
@@ -191,5 +192,3 @@ Vue发送WebSocket信息，使用send发送消息
 ```
 this.ws.send('i have received:' + message.data);
 ```
-
-

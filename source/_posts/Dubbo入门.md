@@ -12,7 +12,9 @@ date: 2020-09-22 09:16:00
 
 #### 背景
 
-![wqq2f1.png](https://s1.ax1x.com/2020/09/22/wqq2f1.png)
+
+![upload successful](/images/pasted-64.png)
+
 
 **单一应用架构**  
 当网站流量很小时，只需一个应用，将所有功能都部署在一起，以减少部署节点和成本。此时，用于简化增删改查工作量的数据访问框架(ORM)是关键。
@@ -40,7 +42,8 @@ date: 2020-09-22 09:16:00
 
 #### 架构
 
-![wqL7uT.png](https://s1.ax1x.com/2020/09/22/wqL7uT.png)
+![upload successful](/images/pasted-65.png)
+
 
 **调用关系说明**
 1. 服务容器负责启动，加载，运行服务提供者。
@@ -78,21 +81,6 @@ Dubbo 架构具有以下几个特点，分别是连通性、健壮性、伸缩�
 
 当服务集群规模进一步扩大，带动IT治理结构进一步升级，需要实现动态部署，进行流动计算，现有分布式服务架构不会带来阻力。下图是未来可能的一种架构：
 
-![wqOA5d.png](https://s1.ax1x.com/2020/09/22/wqOA5d.png)
+![upload successful](/images/pasted-66.png)
 
 参考文献：[http://dubbo.apache.org/zh-cn/docs/user/preface/architecture.html]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

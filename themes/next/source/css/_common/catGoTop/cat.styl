@@ -12,10 +12,18 @@
   transition: all .5s ease-in-out;
   cursor: url('/images/cursor.ico'),pointer;
   opacity: 1;
+
+  +tablet-mobile() {
+    display: none;
+  }
 }
 .cd-top.cd-is-visible {
   opacity: 1;
   top: -226px;
+
+  +tablet-mobile() {
+    display: none;
+  }
 }
 .faa-float.animated, .faa-float.animated-hover:hover, .faa-parent.animated-hover:hover>.faa-float {
   -webkit-animation: float 2s linear infinite;

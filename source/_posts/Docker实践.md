@@ -34,7 +34,7 @@ $ docker run --name webserver -d -p 80:80 nginx
 
 然后我们可以看到nginx欢迎界面：
 
-[![0k1Umt.png](https://s1.ax1x.com/2020/09/27/0k1Umt.png)](https://imgchr.com/i/0k1Umt)
+![upload successful](/images/pasted-13.png)
 
 现在，假设我们非常不喜欢这个欢迎页面，我们希望改成欢迎 Docker 的文字，我 们可以使用 docker exec 命令进入容器，修改其内容。
 
@@ -53,8 +53,8 @@ $ echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
 $ docker diff
 ```
 运行之后我们可以看到webserver容器的改动
-![0k3lBq.png](https://s1.ax1x.com/2020/09/27/0k3lBq.png)
 
+![upload successful](/images/pasted-14.png)
 
 - A	创建了文件或目录  
 - D	删除了文件或目录  
@@ -110,8 +110,8 @@ $ docker build [OPTIONS] PATH | URL | -
 $ docker build -t nginx:v3 .
 ```
 
+![upload successful](/images/pasted-15.png)
 
-![0k0unS.png](https://s1.ax1x.com/2020/09/27/0k0unS.png)
 
 #### 镜像构建上下文（Context）
 

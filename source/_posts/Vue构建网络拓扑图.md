@@ -79,7 +79,8 @@ export default {
 #### 使用webstorm配置eslint
 还是熟悉的webstorm好用，更熟悉一些，但是刚从vscode转过来，还需要重新配置eslint。  
 - 首先是在&lt;script&gt;和&lt;style&gt;标签下不添加两个空格，如下图，添加两个标签。
-![avrTij.png](https://s1.ax1x.com/2020/08/12/avrTij.png)
+![upload successful](/images/pasted-35.png)
+
 - 在Tabs and Indents中将4个空格改成2个
 
 <font color=gray>小知识：使用
@@ -151,7 +152,10 @@ $ npm install sass-resources-loader --save
 $ npm install sass sass-loader@6.0.6
 ```
   。。。淦</font>
-![avV279.png](https://s1.ax1x.com/2020/08/12/avV279.png)
+  
+
+![upload successful](/images/pasted-36.png)  
+  
 #### scss使用
 - 使用$声明变量。
 
@@ -246,7 +250,8 @@ methods: {
 - updated
 - beforeDestroy
 - destroyed
-[![az9yge.png](https://s1.ax1x.com/2020/08/13/az9yge.png)](https://imgchr.com/i/az9yge)
+
+![upload successful](/images/pasted-37.png)
 
 ### Vue使用Ajax发送请求
 - 安装axios

@@ -106,7 +106,8 @@ public class NetDataHandler {
 ```
 - 实现图
 
-![d6tBnJ.png](https://s1.ax1x.com/2020/08/25/d6tBnJ.png)
+![upload successful](/images/pasted-41.png)
+
 
 ### 进一步学习
 
@@ -127,6 +128,3 @@ protected void addResourceHandlers(ResourceHandlerRegistry registry) {
     super.addResourceHandlers(registry);
     }
 ```
-
-
-

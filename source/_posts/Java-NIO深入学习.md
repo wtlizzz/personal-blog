@@ -56,7 +56,8 @@ Java NIO有更多的类和组件，通道、缓冲区和选择器构成了API的
 ##### Selectors
 
 选择器允许一个线程处理多个通道的线程。如果应用程序打开了许多连接(通道)，但每个连接上的流量都很低，那么这很方便。例如，在聊天服务器中。
-![wcyif1.png](https://s1.ax1x.com/2020/09/16/wcyif1.png)
+
+![upload successful](/images/pasted-49.png)
 
 要使用Selectors，你需要注册Channel's。然后调用它的select()方法。此方法将阻塞，直到为其中一个已注册Channel准备好事件为止。方法返回后，线程就可以处理这些事件。事件例如：有传入的连接，接收到的数据等等。
 
@@ -162,7 +163,8 @@ aFile.close();
 3. limit
 
 position和limit的意义取决于缓冲区是处于读模式还是写模式。capacity总是意味着相同的，无论缓冲模式。
-![wcfTG4.png](https://s1.ax1x.com/2020/09/16/wcfTG4.png)
+
+![upload successful](/images/pasted-50.png)
 
 **‡ Capacity（容量）**
 

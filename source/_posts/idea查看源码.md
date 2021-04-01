@@ -14,7 +14,8 @@ date: 2020-10-28 09:02:00
 
 如果不配置，查看源码会如下图所示：
 
-[![Bljlp6.png](https://s1.ax1x.com/2020/10/28/Bljlp6.png)](https://imgchr.com/i/Bljlp6)
+![upload successful](/images/pasted-60.png)
+
 
 会在顶部显示
 ```
@@ -28,13 +29,13 @@ Decompiled .class file,bytecode version: 52.0(Java 8)
 [下载链接](https://www.injdk.cn/)
 2. 打开idea  -\-\>  菜单 \-\-\>  **File** \-\-\> **Project Structure** -\-\> 选择**SDKs**目录 -\-\> **Sourcepath** -\-\>  将下载的openJDK中src.zip添加到目录中。
 
-![jdk24b4d.png](http://www.s3tu.com/images/2020/10/27/jdk24b4d.png)
+![upload successful](/images/pasted-10.png)
 
-![Blzt74.png](https://s1.ax1x.com/2020/10/28/Blzt74.png)
+![upload successful](/images/pasted-11.png)
 
 添加完成之后就能够显示源代码，.class文件也变成.java文件：
 
-![B1pNWR.png](https://s1.ax1x.com/2020/10/28/B1pNWR.png)
+![upload successful](/images/pasted-12.png)
 
 
 

@@ -36,7 +36,9 @@ date: 2020-09-21 09:23:00
 构建自己的极其轻量级的HTTP客户机和服务器
 
 代码结构：
-![wHppEF.png](https://s1.ax1x.com/2020/09/21/wHppEF.png)
+
+![upload successful](/images/pasted-67.png)
+
 
 一般的server都会有handler、initializer、server三个类，分别是处理消息类、初始化类、服务器启动类。
 

@@ -28,7 +28,8 @@ log.debug(bytes.toString());
 
 调试，查看byte\[]中的数据：
 
-![DKnrlt.png](https://s3.ax1x.com/2020/11/19/DKnrlt.png)
+![upload successful](/images/pasted-7.png)
+
 
 在byte\[]中存储的是字符的ascii码。
 
