@@ -23,7 +23,26 @@
     <favorites_list name="hexo-blog" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/hexo-util/lib/spawn.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="113" column="30" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,7 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>my_boy</find>
       <find>https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js</find>
       <find>jquery</find>
       <find>$</find>
@@ -65,6 +83,7 @@
       <find>mobile()</find>
       <find>post_asset_folder</find>
       <find>default_layout</find>
+      <find>GH_TOKEN</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/themes</dir>
@@ -131,7 +150,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -167,7 +186,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -364,6 +383,19 @@
       <workItem from="1616648240041" duration="185000" />
       <workItem from="1616658332832" duration="537000" />
       <workItem from="1616720845718" duration="169000" />
+      <workItem from="1617242155348" duration="209000" />
+      <workItem from="1621146019887" duration="14000" />
+      <workItem from="1625042046505" duration="397000" />
+      <workItem from="1625128295213" duration="612000" />
+      <workItem from="1625187243285" duration="179000" />
+      <workItem from="1625534574255" duration="127000" />
+      <workItem from="1625730310595" duration="118000" />
+      <workItem from="1626052405945" duration="562000" />
+      <workItem from="1626144808641" duration="238000" />
+      <workItem from="1626220263199" duration="444000" />
+      <workItem from="1626308888203" duration="400000" />
+      <workItem from="1626392967133" duration="404000" />
+      <workItem from="1626653814378" duration="1966000" />
     </task>
     <task id="LOCAL-00001" summary="0805">
       <created>1596585522112</created>
@@ -383,7 +415,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151611000" />
+    <option name="totallyTimeSpent" value="157281000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,7 +427,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="1" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49575552" visible="true" weight="0.17688513" />
       <window_info id="Structure" order="1" sideWeight="0.5042445" side_tool="true" weight="0.19097957" />
@@ -411,7 +443,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26496816" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.4178344" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -494,26 +526,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="1221" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/images/JavaNioSelectionKey/屏幕快照 2021-01-06 上午9.26.28.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/source/js/fireworks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="73" column="47" lean-forward="true" selection-start-line="73" selection-start-column="47" selection-end-line="73" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/languages/zh-CN.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="17" column="7" selection-start-line="17" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/JavaNioSelectionKey/屏幕快照 2021-01-07 上午10.16.56.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/source/js/schemes/muse.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -604,13 +616,6 @@
     <entry file="file://$PROJECT_DIR$/themes/next/layout/_third-party/index.swig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17385">
-          <caret line="915" column="15" selection-start-line="915" selection-start-column="15" selection-end-line="915" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/header/index.swig">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -680,17 +685,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="35" column="14" selection-start-line="35" selection-end-line="35" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/websokcet运行解析.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/WebSocket数据解析/aaa.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/WebSocket数据解析/aaa.png" />
     <entry file="file://$PROJECT_DIR$/source/_posts/ceshi.md" />
     <entry file="file://$PROJECT_DIR$/source/images/pasted-1.png">
       <provider selected="true" editor-type-id="images" />
@@ -724,16 +720,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/WebSocket数据解析.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="76">
-            <caret line="4" selection-start-line="4" selection-end-line="4" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/WebSocket数据解析.md" />
     <entry file="file://$PROJECT_DIR$/images/抓包/屏幕快照 2021-03-05 下午4.29.53.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -764,6 +751,40 @@
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/images/pasted-78.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18280">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/hexo-util/lib/spawn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_admin-config.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="113" column="30" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
         </state>
       </provider>
     </entry>
