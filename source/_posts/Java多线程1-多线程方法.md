@@ -149,6 +149,26 @@ run()方法：
     }
 ```
 
+也就是说：
+
+如果使用下面两种的方式创建新的线程，运行的时候要注意。
+
+```
+class MyTask1 implements Runnable{}
+class MyTask2 extends Thread{}
+```
+
+运行多线程：
+
+```
+1. new MyTask().run();
+2. new Thread(new MyTask()).start();
+3. new MyTask2().run();
+```
+
+**第1种方式，无法创建新的线程；  
+第2、3种方式能够创建新的线程。
+**
 
 
 ##### sleep()和wait()
@@ -203,8 +223,3 @@ wait()：
 ```
 
 ```
-
-
-
-
-
