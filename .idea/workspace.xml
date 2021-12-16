@@ -33,20 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="71" column="89" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/footer.swig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="60" lean-forward="true" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+            <state relative-caret-position="371">
+              <caret line="84" column="86" lean-forward="true" selection-start-line="84" selection-start-column="86" selection-end-line="84" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -155,8 +146,8 @@
         <option value="$PROJECT_DIR$/themes/next/source/css/_common/components/post/post-eof.styl" />
         <option value="$PROJECT_DIR$/themes/next/layout/_macro/sidebar.swig" />
         <option value="$PROJECT_DIR$/themes/next/source/css/_common/outline/sidebar/sidebar-nav.styl" />
-        <option value="$PROJECT_DIR$/themes/next/_config.yml" />
         <option value="$PROJECT_DIR$/themes/next/layout/_partials/footer.swig" />
+        <option value="$PROJECT_DIR$/themes/next/_config.yml" />
       </list>
     </option>
   </component>
@@ -217,11 +208,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/source/images" />
       <recent name="$PROJECT_DIR$/themes/next/source/images" />
       <recent name="$PROJECT_DIR$/images/抓包" />
       <recent name="$PROJECT_DIR$/source/_posts/ceshi" />
-      <recent name="$PROJECT_DIR$/source/_posts/WebSocket数据解析" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images/Java基础" />
@@ -449,7 +440,7 @@
       <workItem from="1637140914862" duration="25000" />
       <workItem from="1638769622024" duration="1234000" />
       <workItem from="1639533879936" duration="442000" />
-      <workItem from="1639635780134" duration="991000" />
+      <workItem from="1639635780134" duration="2065000" />
     </task>
     <task id="LOCAL-00001" summary="0805">
       <created>1596585522112</created>
@@ -469,7 +460,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173556000" />
+    <option name="totallyTimeSpent" value="174630000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,7 +473,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="285" y="-929" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49575552" visible="true" weight="0.17688513" />
       <window_info id="Structure" order="1" sideWeight="0.5042445" side_tool="true" weight="0.19097957" />
@@ -581,13 +571,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="1221" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/next/layout/_layout.swig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="58" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/source/css/_mixins.styl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
@@ -791,17 +774,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/footer.swig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="71" column="89" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="89" />
+        <state relative-caret-position="380">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/footer.swig">
+    <entry file="file://$PROJECT_DIR$/source/images/beian.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="60" lean-forward="true" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+        <state relative-caret-position="371">
+          <caret line="84" column="86" lean-forward="true" selection-start-line="84" selection-start-column="86" selection-end-line="84" selection-end-column="86" />
         </state>
       </provider>
     </entry>
