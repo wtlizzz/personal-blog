@@ -45,6 +45,7 @@
       {%- endif %}
 
     </div>
+    <!--
     <div class="cat">
             <div class="ear ear--left"></div>
             <div class="ear ear--right"></div>
@@ -61,6 +62,7 @@
                 <div class="tongue"></div>
             </div>
         </div>
+        -->
   </aside>
   <div id="sidebar-dimmer"></div>
 {% endmacro %}

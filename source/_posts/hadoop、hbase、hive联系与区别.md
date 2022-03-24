@@ -9,9 +9,7 @@ date: 2021-05-19 14:25:00
 
 <!--more-->
 
-<center>
 ![upload successful](/images/pasted-84.png)
-</center>
   
 #### Hadoop
 
@@ -82,7 +80,3 @@ Hive的一些最重要的组件是：
 另一方面，Hive提供了一个基于Hadoop的类似SQL的接口，以绕过JAVA编码。
 
 附：[参考网站](https://betterprogramming.pub/hadoop-vs-hdfs-vs-hbase-vs-hive-ddfffd45d222)
-
-
-
-
